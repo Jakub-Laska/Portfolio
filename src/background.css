@@ -1,0 +1,47 @@
+.background-gradient-left,
+.background-gradient-right,
+.background-gradient-bot{
+  position: fixed;
+  width: clamp(128px, 20vw, 200px);
+  height: clamp(128px, 20vw, 200px);
+  pointer-events: none;
+  z-index: 2;
+  background-repeat: no-repeat;
+  filter: blur(36px);
+}
+.background-gradient-left {
+  bottom: 0;
+  left: 0;
+  background-image: url('./assets/background/background-gradient-left.png');
+  transform: translate(-200px, -40vh) scale(2);
+  transform-origin: center left;
+}
+.background-gradient-bot {
+  bottom: 0;
+  right: 0;
+  background-image: url('./assets/background/background-gradient-bot.png');
+  transform: translate(-40vw, 200px) scale(2);
+  transform-origin: center bottom;
+}
+.background-gradient-right {
+  top: 0;
+  right: 0;
+  background-image: url('./assets/background/background-gradient-right.png');
+  transform: translate(100px, -100px) scale(2);
+  transform-origin: top right;
+}
+.background-grain{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600vh;
+  pointer-events: none;
+  z-index: 4;
+  background-image: url('./assets/background/background-grain.png');
+  background-repeat: repeat;
+}
+#container {
+    z-index: 4;
+    position: relative;
+}

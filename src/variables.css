@@ -1,0 +1,28 @@
+:root{
+    /* colors */
+    --primary-white: #DADFF7;
+    --primary-dark: #232C33;
+    --primary-blue: #A0C1D1;
+    --accent: #EABA6B;
+    /* fonts */
+    --primary-font: "Montserrat", sans-serif;
+    --secondary-font: "Bebas Neue", sans-serif;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    height: 500vh;
+}
+.a{
+    color: var(--accent);
+}
+.b{
+    color: var(--primary-blue);
+    font-family: var(--secondary-font);
+}
+.c{
+    color: var(--primary-dark);
+}
+.d{
+    color: var(--primary-white);
+    font-family: var(--secondary-font);
+}
