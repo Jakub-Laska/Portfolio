@@ -1,5 +1,5 @@
 import './background.css';
-export function background(){
+export function initBackground(){
     const background = document.getElementById('background');
     background.innerHTML = `
   <div class="background-gradient left"></div>
@@ -24,5 +24,4 @@ window.addEventListener("scroll", () => {
     `;
   });
 });
-
 }

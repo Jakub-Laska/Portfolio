@@ -1,8 +1,11 @@
 :root{
     /* colors */
     --primary-white: #DADFF7;
+    --primary-white-50opacity: #dadff780;
     --primary-dark: #232C33;
+    --primary-dark-50opacity: #232c3380;
     --primary-blue: #A0C1D1;
+    --primary-blue-50opacity: #a0c1d180;
     --accent: #EABA6B;
     /* fonts */
     --primary-font: "Montserrat", sans-serif;
@@ -10,7 +13,7 @@
 }
 body{
     font-family: "Montserrat", sans-serif;
-    height: 500vh;
+    height: 600vh;
 }
 .a{
     color: var(--accent);
