@@ -7,6 +7,7 @@ export function initNavbar() {
   animateLogo();
   highlight();
   initBurgerMenu()
+  initNavBtns()
 }
 // Render navbar
 function renderNav() {
@@ -81,20 +82,37 @@ function highlight() {
   });
   navbar.addEventListener("mouseleave", () => {
     setTimeout(() => {
-        targetX = -150;
-    highlight.style.opacity = 0;
+      targetX = -150;
+      highlight.style.opacity = 0;
     }, 300);
   });
 }
 // burger menu
-function initBurgerMenu(){
-    const burger = document.createElement("div");
-    burger.classList.add("burger")
-    burger.appendChild(document.createElement("span"));
-    burger.appendChild(document.createElement("span"));
-    burger.appendChild(document.createElement("span"));
-    navbar.appendChild(burger);
-    burger.addEventListener("click", () => {
+function initBurgerMenu() {
+  const burger = document.createElement("div");
+  burger.classList.add("burger")
+  burger.appendChild(document.createElement("span"));
+  burger.appendChild(document.createElement("span"));
+  burger.appendChild(document.createElement("span"));
+  navbar.appendChild(burger);
+  burger.addEventListener("click", () => {
     burger.classList.toggle("active");
-});
+  });
+}
+// nav buttons
+function initNavBtns() {
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("buttonContainer");
+  buttonContainer.appendChild(document.createElement("button"));
+  buttonContainer.appendChild(document.createElement("button"));
+  buttonContainer.appendChild(document.createElement("button"));
+  const downloadBtn = document.createElement("a")
+  downloadBtn.innerHTML = "download my cv";
+  downloadBtn.href = 'https://jakub-laska.github.io/Resume/';
+  downloadBtn.target = "_blank";
+  buttonContainer.appendChild(downloadBtn);
+
+
+
+  navbar.appendChild(buttonContainer);
 }
