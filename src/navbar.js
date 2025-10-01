@@ -6,14 +6,29 @@ export function initNavbar() {
   scrollUp();
   animateLogo();
   highlight();
-  initBurgerMenu()
-  initNavBtns()
+  initBurgerMenu();
+  darkmode()
 }
 // Render navbar
 function renderNav() {
   navbar.innerHTML = `
     <div class="navbar-logo"></div>
     <div class="navbar-burger-menu"></div>
+
+    <div class="buttonContainer">
+      <button class="darkmodeBtn">dark</button>
+      <button class="skipBtn">skip to main content.</button>
+      <div id="media">
+      <a href="https://github.com/Jakub-Laska" target="_blank">
+      <img src="src/assets/navbar/github.png" alt="github icon" class="mediaIcon"></a>
+      <a href="https://www.linkedin.com/in/jakub-laska-b24639324/" target="_blank">
+      <img src="src/assets/navbar/linkedin.png" alt="linkedin icon" class="mediaIcon"></a>
+      <a href="mailto:jakub.laska1911@gmail.com">
+      <img src="src/assets/navbar/gmail.png" alt="gmail icon" class="mediaIcon"></a>
+      </div>
+      <a class="downloadBtn" href="https://jakub-laska.github.io/Resume/" target="_blank">download my cv.</a>
+    </div>
+
     `;
 }
 // on click scroll to the top
@@ -90,7 +105,7 @@ function highlight() {
 // burger menu
 function initBurgerMenu() {
   const burger = document.createElement("div");
-  burger.classList.add("burger")
+  burger.classList.add("burger");
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
@@ -99,20 +114,15 @@ function initBurgerMenu() {
     burger.classList.toggle("active");
   });
 }
-// nav buttons
-function initNavBtns() {
-  const buttonContainer = document.createElement("div");
-  buttonContainer.classList.add("buttonContainer");
-  buttonContainer.appendChild(document.createElement("button"));
-  buttonContainer.appendChild(document.createElement("button"));
-  buttonContainer.appendChild(document.createElement("button"));
-  const downloadBtn = document.createElement("a")
-  downloadBtn.innerHTML = "download my cv";
-  downloadBtn.href = 'https://jakub-laska.github.io/Resume/';
-  downloadBtn.target = "_blank";
-  buttonContainer.appendChild(downloadBtn);
-
-
-
-  navbar.appendChild(buttonContainer);
+// darkmode
+function darkmode(){
+  const darkBtn = document.querySelector('.darkmodeBtn');
+  let dark = true;
+  darkBtn.innerHTML = "dark";
+darkBtn.addEventListener('click', () => {
+  darkBtn.classList.toggle('active');
+  document.body.classList.toggle('dark'); // your dark mode toggle
+  if (dark) {darkBtn.innerHTML = "light"} else {darkBtn.innerHTML = "dark"};
+  dark = !dark;
+});
 }
