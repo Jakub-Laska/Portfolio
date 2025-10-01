@@ -17,7 +17,7 @@
     --primary-boxshadow: 4px 4px 8px var(--primary-dark-50opacity);
     --primary-textshadow: 2px 2px 12px var(--primary-blue-50opacity);
     /* paddings */
-    --horizontal-padding: 0 clamp(24px, 10vw, 100px);
+    --horizontal-padding: 0 clamp(12px, 6vw, 100px);
 }
 body{
     font-family: "Montserrat", sans-serif;

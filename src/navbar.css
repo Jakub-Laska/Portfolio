@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  height: 10vh;
+  height: 8vh;
   padding: var(--horizontal-padding);
   background-color: var(--primary-dark-25opacity);
   backdrop-filter: blur(1px);
@@ -30,6 +30,7 @@
   opacity: 0;
 }
 .navbar-logo {
+    display: inline-block;
   font-family: var(--secondary-font);
   text-transform: uppercase;
   font-size: clamp(12px, 2vw, 64px);
@@ -43,17 +44,48 @@
   }
 }
 .navbar-logo:hover,
-.navbar-burger-menu:hover {
+.burger:hover {
   cursor: pointer;
-  transform: scale(1.01) translateY(-5px);
+  transform: scale(1.05);
   filter: brightness(1.5);
   text-shadow: var(--primary-textshadow);
 }
-.navbar-burger-menu {
-  height: clamp(32px, 2.5vw, 128px);
-  width: clamp(32px, 2.5vw, 128px);
-  background-image: url(assets/navbar/navbar-burger-menu-icon.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.burger {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: clamp(12px, 6vw, 100px);
+}
+
+.burger span {
+  display: block;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.burger:hover span:nth-child(1) {
+  transform: translateY(-4px);
+}
+.burger:hover span:nth-child(3) {
+  transform: translateY(4px);
+}
+
+.burger.active span:nth-child(1) {
+  transform: rotate(90deg) translate(10px, 0px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-180deg) translate(0px, 10px);
+}
+.burger.burger.active{
+    transform: rotate(45deg);
 }

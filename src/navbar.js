@@ -1,13 +1,15 @@
 import "./navbar.css";
+const navbar = document.getElementById("navbar");
+
 export function initNavbar() {
   renderNav();
   scrollUp();
   animateLogo();
   highlight();
+  initBurgerMenu()
 }
 // Render navbar
 function renderNav() {
-  const navbar = document.getElementById("navbar");
   navbar.innerHTML = `
     <div class="navbar-logo"></div>
     <div class="navbar-burger-menu"></div>
@@ -60,7 +62,6 @@ function animateLogo() {
 }
 // cursor highlight
 function highlight() {
-  const navbar = document.querySelector("#navbar");
   const highlight = document.createElement("div");
   highlight.classList.add("highlight");
   navbar.prepend(highlight);
@@ -84,4 +85,16 @@ function highlight() {
     highlight.style.opacity = 0;
     }, 300);
   });
+}
+// burger menu
+function initBurgerMenu(){
+    const burger = document.createElement("div");
+    burger.classList.add("burger")
+    burger.appendChild(document.createElement("span"));
+    burger.appendChild(document.createElement("span"));
+    burger.appendChild(document.createElement("span"));
+    navbar.appendChild(burger);
+    burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+});
 }
