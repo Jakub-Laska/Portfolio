@@ -5,6 +5,8 @@
     --primary-white-10opacity: rgba(218, 223, 247, 0.1);
     --primary-dark: #232C33;
     --primary-dark-50opacity: #232c3380;
+    --primary-dark-25opacity: rgba(35, 44, 51, 0.25);
+    --primary-dark-10opacity: rgba(35, 44, 51, 0.1);
     --primary-blue: #A0C1D1;
     --primary-blue-50opacity: #a0c1d180;
     --accent: #EABA6B;
@@ -15,7 +17,7 @@
     --primary-boxshadow: 4px 4px 8px var(--primary-dark-50opacity);
     --primary-textshadow: 2px 2px 12px var(--primary-blue-50opacity);
     /* paddings */
-    --horizontal-padding: 0 24px;
+    --horizontal-padding: 0 clamp(24px, 10vw, 100px);
 }
 body{
     font-family: "Montserrat", sans-serif;

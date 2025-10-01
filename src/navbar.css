@@ -4,7 +4,8 @@
   width: 100%;
   height: 10vh;
   padding: var(--horizontal-padding);
-  backdrop-filter: blur(3px) brightness(0.8);
+  background-color: var(--primary-dark-25opacity);
+  backdrop-filter: blur(1px);
   display: flex;
   align-items: center;
   flex-direction: row;
