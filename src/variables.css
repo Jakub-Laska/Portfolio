@@ -2,6 +2,7 @@
     /* colors */
     --primary-white: #DADFF7;
     --primary-white-50opacity: #dadff780;
+    --primary-white-10opacity: rgba(218, 223, 247, 0.1);
     --primary-dark: #232C33;
     --primary-dark-50opacity: #232c3380;
     --primary-blue: #A0C1D1;
