@@ -1,5 +1,6 @@
 :root{
     /* colors */
+    --primary-black: #181819;
     --primary-white: #DADFF7;
     --primary-white-50opacity: #dadff780;
     --primary-white-10opacity: rgba(218, 223, 247, 0.1);
