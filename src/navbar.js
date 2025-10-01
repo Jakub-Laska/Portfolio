@@ -1,12 +1,19 @@
 import './navbar.css';
 export function initNavbar(){
-    const navbar = document.getElementById('navbar');
+    renderNav();
+    scrollUp();
+    animateLogo();
+}
+// Render navbar
+function renderNav(){
+        const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
     <div class="navbar-logo"></div>
     <div class="navbar-burger-menu"></div>
     `
-
-    // on click scroll to the top
+}
+// on click scroll to the top
+function scrollUp(){
     const navbarLogo = document.querySelector('.navbar-logo')
     navbarLogo.addEventListener('click', ()=>{
         window.scrollTo({
@@ -15,3 +22,52 @@ export function initNavbar(){
         });
     })
 }
+// typing animation
+function animateLogo() {
+  const navbarLogo = document.querySelector('.navbar-logo');
+const words = [
+  "Hi, I am Jakub Laska.",                         
+  "I am a self-learner.",       
+  "I enjoy turning ideas into  web projects.",  
+  "I experiment, solve problems, and keep learning.",
+  "I build projects that I am proud to share."   
+];
+  let i = 0;   // word index
+  let j = 0;   // letter index
+  let deleting = false;
+
+  function type() {
+    const currentWord = words[i];
+
+    if (!deleting) {
+      navbarLogo.textContent = currentWord.slice(0, j++);
+      if (j > currentWord.length) {
+        deleting = true;
+        setTimeout(type, 1500); // pause before deleting
+        return;
+      }
+    } else {
+      navbarLogo.textContent = currentWord.slice(0, j--);
+      if (j < 0) {
+        deleting = false;
+        i = (i + 1) % words.length; // move to next word
+        j = 0;
+      }
+    }
+
+    setTimeout(type, deleting ? 80 : 120); // speed
+  }
+
+  type();
+}
+
+
+
+
+
+
+
+
+
+
+

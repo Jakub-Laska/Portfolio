@@ -10,22 +10,16 @@
     /* fonts */
     --primary-font: "Montserrat", sans-serif;
     --secondary-font: "Bebas Neue", sans-serif;
+    /* shadows */
+    --primary-boxshadow: 4px 4px 8px var(--primary-dark-50opacity);
+    --primary-textshadow: 2px 2px 12px var(--primary-blue-50opacity);
+    /* paddings */
+    --horizontal-padding: 0 24px;
 }
 body{
     font-family: "Montserrat", sans-serif;
     height: 600vh;
 }
-.a{
-    color: var(--accent);
-}
-.b{
-    color: var(--primary-blue);
-    font-family: var(--secondary-font);
-}
-.c{
-    color: var(--primary-dark);
-}
-.d{
-    color: var(--primary-white);
-    font-family: var(--secondary-font);
+#container {
+  padding: var(--horizontal-padding);
 }

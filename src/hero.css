@@ -1,8 +1,25 @@
 #hero {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 .spline{
+    position: relative;
     width: 100%;
     height: 50vh;
+    z-index: 2;
+}
+.hero-welcome-img {
+    width: 50vw;
+    height: 50vw;
+    background-image: url(assets/hero/hero-welcome-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    align-self: center;
+    box-shadow: var(--primary-boxshadow);
 }
