@@ -22,3 +22,18 @@
     border-radius: 100%;
     align-self: center;
 }
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-black);
+  color: var(--primary-white);
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+  border: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
