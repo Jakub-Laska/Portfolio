@@ -8,13 +8,15 @@ export function initNavbar() {
   highlight();
   initBurgerMenu();
   darkmode()
-  menuResize();
+  // menuResize();
 }
 // Render navbar
 function renderNav() {
   navbar.innerHTML = `
-    <div class="navbar-logo"></div>
-    <div class="navbar-burger-menu"></div>
+    <div class="navContainer">
+      <div class="navbar-logo"></div>
+      <div class="navbar-burger-menu"></div>
+    </div>
 
     <div class="buttonContainer">
 
@@ -112,37 +114,26 @@ let burger, buttonContainer;
 function initBurgerMenu() {
   burger = document.createElement("div");
   buttonContainer = document.querySelector(".buttonContainer");
+  const navContainer = document.querySelector('.navContainer');
 
   burger.classList.add("burger");
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
-  navbar.appendChild(burger);
+  navContainer.appendChild(burger);
 
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     buttonContainer.classList.toggle("visible");
   });
-
-  window.addEventListener("resize", handleResize);
-  handleResize();
 }
-
-function handleResize() {
-  if (window.innerWidth > 600) {
-    buttonContainer.classList.add("visible");
-    burger.classList.remove("active");
-  } else {
-    buttonContainer.classList.remove("visible");
-  }
-}
-
 // darkmode
 function darkmode(){
   const darkBtn = document.querySelector('.darkmodeBtn');
+  const darkBtnContainer = document.querySelector('.darkmodeContainer');
   let dark = true;
   darkBtn.innerHTML = "dark";
-darkBtn.addEventListener('click', () => {
+darkBtnContainer.addEventListener('click', () => {
   darkBtn.classList.toggle('active');
   document.body.classList.toggle('dark'); // your dark mode toggle
   if (dark) {darkBtn.innerHTML = "light"} else {darkBtn.innerHTML = "dark"};
