@@ -8,6 +8,7 @@ export function initNavbar() {
   highlight();
   initBurgerMenu();
   darkmode()
+  menuResize();
 }
 // Render navbar
 function renderNav() {
@@ -16,7 +17,7 @@ function renderNav() {
     <div class="navbar-burger-menu"></div>
 
     <div class="buttonContainer">
-      <button class="darkmodeBtn">dark</button>
+
       <button class="skipBtn">skip to main content.</button>
       <div id="media">
       <a href="https://github.com/Jakub-Laska" target="_blank">
@@ -27,6 +28,9 @@ function renderNav() {
       <img src="src/assets/navbar/gmail.png" alt="gmail icon" class="mediaIcon"></a>
       </div>
       <a class="downloadBtn" href="https://jakub-laska.github.io/Resume/" target="_blank">download my cv.</a>
+            <div class="darkmodeContainer">
+      <button class="darkmodeBtn">dark</button>
+      </div>
     </div>
 
     `;
@@ -103,17 +107,36 @@ function highlight() {
   });
 }
 // burger menu
+let burger, buttonContainer;
+
 function initBurgerMenu() {
-  const burger = document.createElement("div");
+  burger = document.createElement("div");
+  buttonContainer = document.querySelector(".buttonContainer");
+
   burger.classList.add("burger");
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
   navbar.appendChild(burger);
+
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
+    buttonContainer.classList.toggle("visible");
   });
+
+  window.addEventListener("resize", handleResize);
+  handleResize();
 }
+
+function handleResize() {
+  if (window.innerWidth > 600) {
+    buttonContainer.classList.add("visible");
+    burger.classList.remove("active");
+  } else {
+    buttonContainer.classList.remove("visible");
+  }
+}
+
 // darkmode
 function darkmode(){
   const darkBtn = document.querySelector('.darkmodeBtn');
