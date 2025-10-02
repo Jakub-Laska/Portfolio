@@ -1,8 +1,8 @@
-import "./navbar.css";
-const navbar = document.getElementById("navbar");
+import "./header.css";
+const header = document.getElementById("header");
 
-export function initNavbar() {
-  renderNav();
+export function initHeader() {
+  renderHeader();
   scrollUp();
   animateLogo();
   highlight();
@@ -10,12 +10,12 @@ export function initNavbar() {
   darkmode()
   // menuResize();
 }
-// Render navbar
-function renderNav() {
-  navbar.innerHTML = `
-    <div class="navContainer">
-      <div class="navbar-logo"></div>
-      <div class="navbar-burger-menu"></div>
+// Render header
+function renderHeader() {
+  header.innerHTML = `
+    <div class="headerContainer">
+      <div class="header-logo"></div>
+      <div class="header-burger-menu"></div>
     </div>
 
     <div class="buttonContainer">
@@ -23,11 +23,11 @@ function renderNav() {
       <button class="skipBtn">skip to main content.</button>
       <div id="media">
       <a href="https://github.com/Jakub-Laska" target="_blank">
-      <img src="src/assets/navbar/github.png" alt="github icon" class="mediaIcon"></a>
+      <img src="src/assets/header/github.png" alt="github icon" class="mediaIcon"></a>
       <a href="https://www.linkedin.com/in/jakub-laska-b24639324/" target="_blank">
-      <img src="src/assets/navbar/linkedin.png" alt="linkedin icon" class="mediaIcon"></a>
+      <img src="src/assets/header/linkedin.png" alt="linkedin icon" class="mediaIcon"></a>
       <a href="mailto:jakub.laska1911@gmail.com">
-      <img src="src/assets/navbar/gmail.png" alt="gmail icon" class="mediaIcon"></a>
+      <img src="src/assets/header/gmail.png" alt="gmail icon" class="mediaIcon"></a>
       </div>
       <a class="downloadBtn" href="https://jakub-laska.github.io/Resume/" target="_blank">download my cv.</a>
             <div class="darkmodeContainer">
@@ -39,8 +39,8 @@ function renderNav() {
 }
 // on click scroll to the top
 function scrollUp() {
-  const navbarLogo = document.querySelector(".navbar-logo");
-  navbarLogo.addEventListener("click", () => {
+  const headerLogo = document.querySelector(".header-logo");
+  headerLogo.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -49,7 +49,7 @@ function scrollUp() {
 }
 // typing animation
 function animateLogo() {
-  const navbarLogo = document.querySelector(".navbar-logo");
+  const headerLogo = document.querySelector(".header-logo");
   const words = [
     "Hi, I am Jakub Laska.",
     "I am a self-learner.",
@@ -63,14 +63,14 @@ function animateLogo() {
   function type() {
     const currentWord = words[i];
     if (!deleting) {
-      navbarLogo.textContent = currentWord.slice(0, j++);
+      headerLogo.textContent = currentWord.slice(0, j++);
       if (j > currentWord.length) {
         deleting = true;
         setTimeout(type, 1500); // pause before deleting
         return;
       }
     } else {
-      navbarLogo.textContent = currentWord.slice(0, j--);
+      headerLogo.textContent = currentWord.slice(0, j--);
       if (j < 0) {
         deleting = false;
         i = (i + 1) % words.length; // move to next word
@@ -86,7 +86,7 @@ function animateLogo() {
 function highlight() {
   const highlight = document.createElement("div");
   highlight.classList.add("highlight");
-  navbar.prepend(highlight);
+  header.prepend(highlight);
   let targetX = -150;
   let currentX = -150;
   function animate() {
@@ -95,13 +95,13 @@ function highlight() {
     requestAnimationFrame(animate);
   }
   animate();
-  navbar.addEventListener("mousemove", (e) => {
-    const rect = navbar.getBoundingClientRect();
+  header.addEventListener("mousemove", (e) => {
+    const rect = header.getBoundingClientRect();
     const x = e.clientX - rect.left;
     targetX = x - highlight.offsetWidth / 2;
     highlight.style.opacity = 1;
   });
-  navbar.addEventListener("mouseleave", () => {
+  header.addEventListener("mouseleave", () => {
     setTimeout(() => {
       targetX = -150;
       highlight.style.opacity = 0;
@@ -114,13 +114,13 @@ let burger, buttonContainer;
 function initBurgerMenu() {
   burger = document.createElement("div");
   buttonContainer = document.querySelector(".buttonContainer");
-  const navContainer = document.querySelector('.navContainer');
+  const headerContainer = document.querySelector('.headerContainer');
 
   burger.classList.add("burger");
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
   burger.appendChild(document.createElement("span"));
-  navContainer.appendChild(burger);
+  headerContainer.appendChild(burger);
 
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");

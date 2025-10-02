@@ -1,4 +1,3 @@
-/* Highlight effect */
 .highlight {
     position: absolute;
     top: 0;
@@ -10,9 +9,7 @@
     transition: left 0.2s ease, opacity 0.3s ease;
     opacity: 0;
 }
-
-/* Navbar */
-#navbar {
+#header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -25,7 +22,7 @@
     z-index: 10;
 }
 
-.navContainer {
+.headerContainer {
     min-height: 64px;
     width: 100%;
     display: flex;
@@ -35,8 +32,7 @@
     justify-content: space-between;
 }
 
-/* Logo */
-.navbar-logo {
+.header-logo {
     display: inline-block;
     font-family: var(--secondary-font);
     text-transform: uppercase;
@@ -54,7 +50,6 @@
     }
 }
 
-/* Burger menu */
 .burger {
     width: 30px;
     height: 24px;
@@ -73,7 +68,6 @@
     transform-origin: center;
 }
 
-/* Burger hover and active states */
 .burger:hover span:nth-child(1) { transform: translateY(-4px); }
 .burger:hover span:nth-child(3) { transform: translateY(4px); }
 .burger.active span:nth-child(1) { transform: rotate(90deg) translate(10px, 0); }
@@ -81,8 +75,7 @@
 .burger.active span:nth-child(3) { transform: rotate(-180deg) translate(0, 10px); }
 .burger.active { transform: rotate(45deg); }
 
-/* Hover effects for logo & burger & buttons */
-.navbar-logo:hover,
+.header-logo:hover,
 .burger:hover,
 .buttonContainer button:hover,
 .buttonContainer .downloadBtn:hover {
@@ -91,7 +84,6 @@
     opacity: 1;
 }
 
-/* Button Container (Sub-menu) */
 .buttonContainer {
     display: none;
     justify-content: space-between;
@@ -118,7 +110,6 @@
     letter-spacing: 1px;
 }
 
-/* Social Media Icons */
 #media {
     display: flex;
     justify-content: space-between;
@@ -140,7 +131,6 @@
     cursor: pointer;
 }
 
-/* Darkmode toggle */
 .darkmodeContainer {
     display: flex;
     align-items: center;
@@ -178,7 +168,6 @@
     right: 0.1em;
 }
 
-/* Darkmode active states */
 .darkmodeBtn.active::before {
     right: 2.1em;
     background-color: var(--accent);
