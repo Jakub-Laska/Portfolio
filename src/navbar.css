@@ -109,49 +109,37 @@
   .buttonContainer {
     position: absolute;
     right: clamp(12px, 6vw, 100px);
-    padding: 6px;
-    border: 1px solid red;
-    max-width: 30%;
+    max-width: 40%;
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 32px;
     align-items: center;
-  }
-
-  .buttonContainer .downloadBtn,
-  .buttonContainer .skipBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 48px;
-    width: 96px;
-    border-radius: 5%;
-    font-size: .8vw;
-    padding: 12px;
     text-align: center;
-    font-family: var(--secondary-font);
-    letter-spacing: 1px;
-    text-shadow: 1px 0px 1px var(--primary-black);
-    box-shadow: var(--primary-boxshadow);
-    background-image: url('./assets/background/background-grain.png');
-    background-size: contain;
-    color: var(--primary-white);
-    background-color: var(--accent);
-    border: inset 2px var(--primary-white-50opacity);
+    line-height: 1;
   }
-
+  .buttonContainer .downloadBtn,
+  .buttonContainer .skipBtn,
+  .darkmodeBtn {
+    color: var(--primary-white);
+    font-size: clamp(6px, .9vw, 24px);
+    text-transform: uppercase;
+  }
   #media {
     display: flex;
     gap: 8px;
   }
-
   .mediaIcon {
-    max-height: 32px;
+    max-height: clamp(24px, 2vw, 36px);
+    max-width: clamp(24px, 2vw, 36px);
     transition: 0.5s;
+    background-color: var(--primary-blue-50opacity);
+    border: solid 1px var(--primary-blue-50opacity);
+    border-radius: 100%;
   }
-
   .mediaIcon:hover {
-    transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg) scale(1.05);
+        filter: brightness(1.5);
+    opacity: 1;
     cursor: pointer;
   }
   .darkmodeBtn{
@@ -180,5 +168,16 @@
   }
   .darkmodeBtn.active::before{
     right: 2em;
+    background-color: var(--accent);
+  }
+    .darkmodeBtn.active::after{
+    background-color: var(--accent);
+    opacity: .5;
+  }
+  .buttonContainer .downloadBtn:hover,
+  .buttonContainer button:hover{
+    transform: scale(1.05);
+    filter: brightness(1.5);
+    opacity: 1;
   }
 }
