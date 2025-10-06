@@ -34,5 +34,6 @@ zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQgINc0RCDXNGAg1zR0INc0gCDXNIAg1zR0INc0YCDXNEQg1
 AAg1zQAINc0A1KepZrTd3oQAAAAASUVORK5CYII=" alt="Spline preview""/></spline-viewer>
 <div class="hero-welcome-img"></div>
 <div class="hero-lorem-img"></div>
+<div class="hero-lorem2-img"></div>
     `
 }
