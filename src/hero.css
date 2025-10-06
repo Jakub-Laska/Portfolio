@@ -5,16 +5,29 @@
     display: flex;
     flex-direction: column;
     gap: 100px;
+    align-items: center;
+    justify-content: center;
 }
 .spline{
-    width: 100%;
+    width: 50%;
     height: 50vh;
     z-index: 2;
+    border-radius: 24px;
 }
 .hero-welcome-img {
     width: 50vw;
     height: 50vw;
     background-image: url(assets/hero/hero-welcome-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    align-self: center;
+}
+.hero-lorem-img {
+    width: 50vw;
+    height: 50vw;
+    background-image: url(assets/hero/hero-lorem-img.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
