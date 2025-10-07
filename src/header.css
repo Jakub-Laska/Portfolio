@@ -51,8 +51,8 @@
 }
 
 .burger {
-    width: 30px;
-    height: 24px;
+    width: clamp(24px, 2vw, 30px);
+    height: clamp(24px, 2vw, 24px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

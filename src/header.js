@@ -15,7 +15,6 @@ function renderHeader() {
   header.innerHTML = `
     <div class="headerContainer">
       <div class="header-logo"></div>
-      <div class="header-burger-menu"></div>
     </div>
 
     <div class="buttonContainer">
@@ -140,3 +139,4 @@ darkBtnContainer.addEventListener('click', () => {
   dark = !dark;
 });
 }
+
