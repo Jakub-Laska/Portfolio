@@ -23,7 +23,7 @@
 }
 
 .headerContainer {
-    min-height: 64px;
+    min-height: clamp(64px, 8vw, 96px);
     width: 100%;
     display: flex;
     position: relative;
@@ -38,7 +38,6 @@
     text-transform: uppercase;
     font-size: clamp(14px, 4vw, 48px);
     border-right: 1px solid var(--primary-white);
-    line-height: 1.1em;
     animation: blink 0.7s step-end infinite;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease, text-shadow 0.3s ease;
