@@ -35,5 +35,5 @@ AAg1zQAINc0A1KepZrTd3oQAAAAASUVORK5CYII=" alt="Spline preview""/></spline-viewer
 <div class="hero-welcome-img"></div>
 <div class="hero-lorem-img"></div>
 <div class="hero-lorem2-img"></div>
+<iframe src='https://my.spline.design/untitled-XxLcFu5CM4JO2jSdHMW9DEIh/' frameborder='0' class="spline"></iframe>
     `
-}
