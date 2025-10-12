@@ -1,0 +1,69 @@
+.tech-stack {
+  width: 100%;
+  border: solid 1px rgba(255, 0, 0, 0.282);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tech-stack p {
+  text-align: center;
+  font-size: 128px;
+  font-weight: 900;
+  color: var(--primary-white);
+  margin: auto;
+}
+
+.carousel {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  backdrop-filter: blur(10px);
+  background-color: var(--primary-blue-10opacity);
+  overflow-x: auto;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    animation: scroll 5s linear infinite;
+}
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.carousel-track img {
+    height: 64px;
+    width: 64px;
+}
+.carousel::before,
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--primary-blue-10opacity), transparent);
+}
+
+.carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--primary-blue-10opacity), transparent);
+}
