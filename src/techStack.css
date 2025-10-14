@@ -1,69 +1,26 @@
 .tech-stack {
-  width: 100%;
-  border: solid 1px rgba(255, 0, 0, 0.282);
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+  width: 80%;
+  overflow: hidden;
 }
-
 .tech-stack p {
   text-align: center;
-  font-size: 128px;
+  font-size: 64px;
   font-weight: 900;
   color: var(--primary-white);
-  margin: auto;
 }
-
-.carousel {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  backdrop-filter: blur(10px);
-  background-color: var(--primary-blue-10opacity);
-  overflow-x: auto;
-}
-.carousel::-webkit-scrollbar {
-  display: none;
+.carousel{
+    mask: linear-gradient(90deg, transparent, white 36%, white 64%, transparent);
 }
 .carousel-track {
+    padding-block: 20px;
     display: flex;
-    gap: 40px;
+    gap: 64px;
     align-items: center;
-    justify-content: center;
-    animation: scroll 5s linear infinite;
+    animation: scroll 45s linear infinite;
+    width: max-content;
 }
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
     to {
-        transform: translateX(-100%);
+        transform: translate(calc(-50% - 32px));
     }
-}
-.carousel-track img {
-    height: 64px;
-    width: 64px;
-}
-.carousel::before,
-.carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.carousel::before {
-  left: 0;
-  background: linear-gradient(to right, var(--primary-blue-10opacity), transparent);
-}
-
-.carousel::after {
-  right: 0;
-  background: linear-gradient(to left, var(--primary-blue-10opacity), transparent);
 }
