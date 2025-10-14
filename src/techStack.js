@@ -23,9 +23,26 @@ function renderTechStack() {
         
     </div>
     </div>
+        <div class="carousel">
+    <div class="carousel-track skills">
+<img src="src/assets/techStack/1.png" alt="Responsive Design" class="skillIcon"></img>
+<img src="src/assets/techStack/2.png" alt="Clean Code" class="skillIcon"></img>
+<img src="src/assets/techStack/3.png" alt="API Integration" class="skillIcon"></img>
+<img src="src/assets/techStack/4.png" alt="UI/UX" class="skillIcon"></img>
+<img src="src/assets/techStack/5.png" alt="Git Workflow" class="skillIcon"></img>
+<img src="src/assets/techStack/6.png" alt="State Management" class="skillIcon"></img>
+<img src="src/assets/techStack/7.png" alt="Debugging" class="skillIcon"></img>
+<img src="src/assets/techStack/8.png" alt="Performance" class="skillIcon"></img>
+<img src="src/assets/techStack/9.png" alt="Reusable Components" class="skillIcon"></img>
+<img src="src/assets/techStack/10.png" alt="3D Elements" class="skillIcon"></img>
+        
+    </div>
+    </div>
     `;
     
-    const track = document.querySelector(".carousel-track");
+    const tracks = document.querySelectorAll(".carousel-track");
+    tracks.forEach(track => {
     const clone = track.innerHTML;
-    track.innerHTML += clone;
+    track.innerHTML += clone; 
+    });
 }

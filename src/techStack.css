@@ -18,9 +18,24 @@
     align-items: center;
     animation: scroll 45s linear infinite;
     width: max-content;
+    margin-top: 20px;
 }
 @keyframes scroll {
     to {
         transform: translate(calc(-50% - 32px));
     }
+}
+.skills {
+        animation: scrollSkills 60s linear infinite;
+}
+@keyframes scrollSkills {
+    from {
+        transform: translate(calc(-50% - 32px));
+    }
+    to {
+        transform: translate(0);
+    }
+}
+.skillIcon {
+    height: 96px;
 }
