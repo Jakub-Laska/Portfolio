@@ -4,7 +4,7 @@
 }
 .tech-stack p {
   text-align: center;
-  font-size: 64px;
+  font-size: clamp(36px, 4vw, 64px);
   font-weight: 900;
   color: var(--primary-white);
 }
@@ -12,13 +12,12 @@
     mask: linear-gradient(90deg, transparent, white 36%, white 64%, transparent);
 }
 .carousel-track {
-    padding-block: 20px;
+    padding-block: clamp(12px, 4vw, 24px);
     display: flex;
-    gap: 64px;
+    gap: clamp(24px, 4vw, 64px);
     align-items: center;
     animation: scroll 45s linear infinite;
     width: max-content;
-    margin-top: 20px;
 }
 @keyframes scroll {
     to {
@@ -36,6 +35,9 @@
         transform: translate(0);
     }
 }
+.techIcon {
+    height: clamp(48px, 6vw, 128px);
+}
 .skillIcon {
-    height: 96px;
+    height: clamp(36px, 4vw, 96px);
 }
