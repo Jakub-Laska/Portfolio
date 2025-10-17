@@ -50,11 +50,11 @@ function scrollUp() {
 function animateLogo() {
   const headerLogo = document.querySelector(".header-logo");
   const words = [
-    "Hi, I am Jakub Laska.",
-    "I am a self-learner.",
-    "I enjoy turning ideas into  web projects.",
-    "I experiment, solve problems, and keep learning.",
-    "I build projects that I am proud to share.",
+    "<Hi, I am Jakub Laska./>",
+    "<I am a self-learner./>",
+    "<I enjoy turning ideas into  web projects./>",
+    "<I experiment, solve problems, and keep learning./>",
+    "<I build projects that I am proud to share./>",
   ];
   let i = 0; // word index
   let j = 0; // letter index

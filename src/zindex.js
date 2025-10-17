@@ -7,8 +7,8 @@ import { initTechStack } from './techStack.js';
 
 function initAll(){
 initBackground();
-// initHeader();
+initHeader();
 // initHero();
-initTechStack();
+// initTechStack();
 }
 initAll();
