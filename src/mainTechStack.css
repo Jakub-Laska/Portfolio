@@ -1,8 +1,16 @@
-.tech-stack {
+#mainTechStack {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.techStackContainer {
   width: 80%;
   overflow: hidden;
 }
-.tech-stack p {
+#mainTechStack p {
   text-align: center;
   font-size: clamp(36px, 4vw, 64px);
   font-weight: 900;

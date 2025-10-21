@@ -1,10 +1,8 @@
-import './hero.css';
-export function initHero() {
-    const hero = document.getElementById('hero');
-    hero.innerHTML = `
-<img src="/src/assets/hero/hero-welcome-img.png" alt="welcome img" class="hero-welcome-img" loading='lazy'/>
-<img src="/src/assets/hero/hero-lorem-img.png" alt="lorem img" class="hero-lorem-img" loading='lazy'/>
-<img src="/src/assets/hero/hero-lorem2-img.png"" alt="lorem2 img" class="hero-lorem2-img" loading='lazy'/>
+import "./mainSpline.css";
+
+export function initMainSpline() {
+    const mainSpline = document.getElementById("mainSpline");
+    mainSpline.innerHTML = `
 <iframe src='https://my.spline.design/untitled-XxLcFu5CM4JO2jSdHMW9DEIh/' frameborder='0' class="spline" loading='lazy'></iframe>
 <spline-viewer loading='lazy' class="spline" hint loading-anim-type="spinner-big-dark" url="https://prod.spline.design/VNQOafK07bFkGL23/scene.splinecode">
 
@@ -39,5 +37,5 @@ zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQgINc0RCDXNGAg1zR0INc0gCDXNIAg1zR0INc0YCDXNEQg1
 AAg1zQAINc0A1KepZrTd3oQAAAAASUVORK5CYII=" loading='lazy' alt="Spline preview""/>
 
 </spline-viewer>
-`
+    `;
 }

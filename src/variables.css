@@ -25,10 +25,3 @@ body{
     font-family: "Montserrat", sans-serif;
     overflow: hidden;
 }
-
-#container {
-  padding: var(--horizontal-padding);
-}
-.container {
-  opacity: 0;
-}
