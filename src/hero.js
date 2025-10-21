@@ -2,7 +2,12 @@ import './hero.css';
 export function initHero() {
     const hero = document.getElementById('hero');
     hero.innerHTML = `
-<spline-viewer class="spline" hint loading-anim-type="spinner-big-dark" url="https://prod.spline.design/VNQOafK07bFkGL23/scene.splinecode">
+<img src="/src/assets/hero/hero-welcome-img.png" alt="welcome img" class="hero-welcome-img" loading='lazy'/>
+<img src="/src/assets/hero/hero-lorem-img.png" alt="lorem img" class="hero-lorem-img" loading='lazy'/>
+<img src="/src/assets/hero/hero-lorem2-img.png"" alt="lorem2 img" class="hero-lorem2-img" loading='lazy'/>
+<iframe src='https://my.spline.design/untitled-XxLcFu5CM4JO2jSdHMW9DEIh/' frameborder='0' class="spline" loading='lazy'></iframe>
+<spline-viewer loading='lazy' class="spline" hint loading-anim-type="spinner-big-dark" url="https://prod.spline.design/VNQOafK07bFkGL23/scene.splinecode">
+
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAYAAADxlA/3AAAJ+ElEQVR4AQCBAH7/AAg1zQAINc0ACDXNAAg1zQAINc0A
 CDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQUINc0QCDXNGQg1zSEINc0mCDXNKAg1zSYINc0iCDXNHAg1zRUINc0MCDXNAwg1zQAINc0ACDXNAAg1zQAI
 Nc0ACDXNAAg1zQAINc0AAIEAfv8ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0BCDXNDAg1zRcINc0gCDXNKAg1zSwINc0u
@@ -31,10 +36,8 @@ AAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQQINc0OCDXNFwg1zSAINc0oCDXNLQg1zTAINc0wCDXN
 CDXNAAg1zQAINc0ACDXNAAg1zQAAgQB+/wAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQUINc0OCDXNFwg1zR4INc0jCDXN
 Jgg1zSYINc0jCDXNHgg1zRcINc0PCDXNBwg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAGBAH7/AAg1zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1
 zQAINc0ACDXNAAg1zQAINc0ACDXNAAg1zQgINc0RCDXNGAg1zR0INc0gCDXNIAg1zR0INc0YCDXNEQg1zQkINc0BCDXNAAg1zQAINc0ACDXNAAg1zQAINc0ACDXN
-AAg1zQAINc0A1KepZrTd3oQAAAAASUVORK5CYII=" alt="Spline preview""/></spline-viewer>
-<div class="hero-welcome-img"></div>
-<div class="hero-lorem-img"></div>
-<div class="hero-lorem2-img"></div>
-<iframe src='https://my.spline.design/untitled-XxLcFu5CM4JO2jSdHMW9DEIh/' frameborder='0' class="spline"></iframe>
+AAg1zQAINc0A1KepZrTd3oQAAAAASUVORK5CYII=" loading='lazy' alt="Spline preview""/>
+
+</spline-viewer>
 `
 }

@@ -29,3 +29,6 @@ body{
 #container {
   padding: var(--horizontal-padding);
 }
+.container {
+  opacity: 0;
+}

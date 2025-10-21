@@ -6,7 +6,7 @@ export function initSplashScreen(){
 }
     const spans = document.querySelectorAll('.splash-span');
     const splashScreen = document.getElementById('splash-screen');
-
+    const bodyContainer = document.querySelector('.container');
 function splashAnimation(){
     window.addEventListener('DOMContentLoaded', () => {
 
@@ -27,10 +27,11 @@ function splashAnimation(){
 
     setTimeout(() => {
         splashScreen.style.top = '-100vh';
+        bodyContainer.style.opacity = '1';
     }, 2300);
 
     setTimeout(() => {
         document.body.style.overflow = 'auto';
-    }, 3800);
+    }, 3300);
 });
 }

@@ -22,36 +22,7 @@ main {
     z-index: 2;
     border-radius: 24px;
 }
-.hero-welcome-img {
-    width: 50vw;
-    height: 50vw;
-    background-image: url(assets/hero/hero-welcome-img.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 100%;
-    align-self: center;
-}
-.hero-lorem-img {
-    width: 50vw;
-    height: 50vw;
-    background-image: url(assets/hero/hero-lorem-img.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 100%;
-    align-self: center;
-}
-.hero-lorem2-img {
-    width: 50vw;
-    height: 50vw;
-    background-image: url(assets/hero/hero-lorem2-img.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 100%;
-    align-self: center;
-}
+
 .skip-link {
   position: absolute;
   top: -40px;
