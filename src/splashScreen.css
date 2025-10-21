@@ -1,0 +1,34 @@
+#splash-screen{
+    z-index: 11;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-dark);
+    position: absolute;
+    top: 0;
+    color: var(--primary-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    transition: top 1.5s ease;
+}
+.splash-span{
+    font-size: clamp(32px, 5vw, 100px);
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(10vh);
+    transition: none;
+}
+
+.splash-span.active{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease-in-out;
+}
+.splash-span.fade{
+    opacity: 0;
+    transform: translateY(-30vh);
+    transition: all 0.5s ease-in-out;
+}
