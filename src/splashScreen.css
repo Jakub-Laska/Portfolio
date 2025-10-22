@@ -6,7 +6,6 @@
     backdrop-filter: blur(1px);
     position: absolute;
     top: 0;
-    color: var(--primary-white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +20,7 @@
     opacity: 0;
     transform: translateY(10vh);
     transition: none;
+    color: var(--primary-white);
 }
 
 .splash-span.active{

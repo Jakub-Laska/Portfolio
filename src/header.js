@@ -49,7 +49,8 @@ function scrollUp() {
 // typing animation
 function animateLogo() {
   const headerLogo = document.querySelector(".header-logo");
-  const words = [
+  setTimeout(() => {
+      const words = [
     "Hi, I am Jakub Laska.",
     "I am a self-learner.",
     "I enjoy turning ideas into  web projects.",
@@ -80,6 +81,7 @@ function animateLogo() {
   }
 
   type();
+  }, 3300);
 }
 // cursor highlight
 function highlight() {
