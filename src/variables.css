@@ -1,6 +1,10 @@
 :root{
     /* colors */
     --primary-black: #181819;
+    --primary-black-90opacity: rgba(24, 24, 25, 0.9);
+    --primary-black-50opacity: rgba(24, 24, 25, 0.5);
+    --primary-black-25opacity: rgba(24, 24, 25, 0.25);
+    --primary-black-10opacity: rgba(24, 24, 25, 0.1);
     --primary-white: #DADFF7;
     --primary-white-50opacity: #dadff780;
     --primary-white-10opacity: rgba(218, 223, 247, 0.1);
@@ -12,6 +16,7 @@
     --primary-blue-50opacity: #a0c1d180;
     --primary-blue-10opacity: rgba(160, 193, 209, 0.1);
     --accent: #eaba6b;
+    --accent-10opacity: rgba(234, 185, 107, 0.1);
 
     /* fonts */
     --primary-font: "Montserrat", sans-serif;

@@ -2,7 +2,7 @@ import "./mainTechStack.css";
 const techStack = document.querySelector("#mainTechStack");
 
 export function initMainTechStack() {
-        techStack.innerHTML = `
+    techStack.innerHTML = `
     <div class="techStackContainer">
         <p>Tech Stack</p>
         <div class="carousel">
@@ -37,10 +37,10 @@ export function initMainTechStack() {
         </div>
     </div>
     `;
-    
+
     const tracks = document.querySelectorAll(".carousel-track");
     tracks.forEach(track => {
-    const clone = track.innerHTML;
-    track.innerHTML += clone; 
+        const clone = track.innerHTML;
+        track.innerHTML += clone;
     });
 }

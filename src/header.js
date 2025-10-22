@@ -8,7 +8,6 @@ export function initHeader() {
   highlight();
   initBurgerMenu();
   darkmode()
-  // menuResize();
 }
 // Render header
 function renderHeader() {
@@ -50,37 +49,37 @@ function scrollUp() {
 function animateLogo() {
   const headerLogo = document.querySelector(".header-logo");
   setTimeout(() => {
-      const words = [
-    "Hi, I am Jakub Laska.",
-    "I am a self-learner.",
-    "I enjoy turning ideas into  web projects.",
-    "I experiment, solve problems, and keep learning.",
-    "I build projects that I am proud to share.",
-  ];
-  let i = 0; // word index
-  let j = 0; // letter index
-  let deleting = false;
-  function type() {
-    const currentWord = words[i];
-    if (!deleting) {
-      headerLogo.textContent = currentWord.slice(0, j++);
-      if (j > currentWord.length) {
-        deleting = true;
-        setTimeout(type, 1500); // pause before deleting
-        return;
+    const words = [
+      "Hi, I am Jakub Laska.",
+      "I am a self-learner.",
+      "I enjoy turning ideas into  web projects.",
+      "I experiment, solve problems, and keep learning.",
+      "I build projects that I am proud to share.",
+    ];
+    let i = 0; // word index
+    let j = 0; // letter index
+    let deleting = false;
+    function type() {
+      const currentWord = words[i];
+      if (!deleting) {
+        headerLogo.textContent = currentWord.slice(0, j++);
+        if (j > currentWord.length) {
+          deleting = true;
+          setTimeout(type, 1500); // pause before deleting
+          return;
+        }
+      } else {
+        headerLogo.textContent = currentWord.slice(0, j--);
+        if (j < 0) {
+          deleting = false;
+          i = (i + 1) % words.length; // move to next word
+          j = 0;
+        }
       }
-    } else {
-      headerLogo.textContent = currentWord.slice(0, j--);
-      if (j < 0) {
-        deleting = false;
-        i = (i + 1) % words.length; // move to next word
-        j = 0;
-      }
+      setTimeout(type, deleting ? 80 : 120); // speed
     }
-    setTimeout(type, deleting ? 80 : 120); // speed
-  }
 
-  type();
+    type();
   }, 3300);
 }
 // cursor highlight
@@ -129,16 +128,16 @@ function initBurgerMenu() {
   });
 }
 // darkmode
-function darkmode(){
+function darkmode() {
   const darkBtn = document.querySelector('.darkmodeBtn');
   const darkBtnContainer = document.querySelector('.darkmodeContainer');
   let dark = true;
   darkBtn.innerHTML = "dark";
-darkBtnContainer.addEventListener('click', () => {
-  darkBtn.classList.toggle('active');
-  document.body.classList.toggle('dark'); // your dark mode toggle
-  if (dark) {darkBtn.innerHTML = "light"} else {darkBtn.innerHTML = "dark"};
-  dark = !dark;
-});
+  darkBtnContainer.addEventListener('click', () => {
+    darkBtn.classList.toggle('active');
+    document.body.classList.toggle('dark'); // your dark mode toggle
+    if (dark) { darkBtn.innerHTML = "light" } else { darkBtn.innerHTML = "dark" };
+    dark = !dark;
+  });
 }
 

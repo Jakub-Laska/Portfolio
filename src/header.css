@@ -13,14 +13,14 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--primary-dark-25opacity);
+    background-color: var(--primary-black-90opacity);
     backdrop-filter: blur(1px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
     opacity: 0;
+    z-index: 2;
 }
 
 .headerContainer {
@@ -91,7 +91,7 @@
     align-items: center;
     width: 100%;
     padding: 6px clamp(12px, 6vw, 100px);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-black-90opacity);
     border-top: 1px solid var(--primary-white-10opacity);
 }
 

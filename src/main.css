@@ -1,8 +1,9 @@
-body{
+body {
     font-family: "Montserrat", sans-serif;
     overflow: hidden;
 }
-#mainContainer{
+
+#mainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +11,11 @@ body{
     gap: 25vh;
     padding: var(--horizontal-padding);
     opacity: 0;
-    margin: 100vh 0;    
+    margin: 100vh 0;
 }
-#mainContainer section{
-    background-color: black;
+
+#mainContainer section {
+    background-color: var(--primary-black-50opacity);
     width: 100%;
     height: 100vh;
     padding: var(--horizontal-padding);
@@ -21,18 +23,24 @@ body{
     align-items: center;
     justify-content: center;
     gap: 32px;
+    z-index: 1;
 }
+
 .skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-black);
-  color: var(--primary-white);
-  padding: 8px 16px;
-  z-index: 100;
-  transition: top 0.3s;
-  border: none;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-black);
+    color: var(--primary-white);
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+    border: none;
+    opacity: 0;
+    transition: none;
 }
+
 .skip-link:focus {
-  top: 0;
+    top: 0;
+    opacity: 1;
 }
