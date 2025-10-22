@@ -12,16 +12,33 @@
     --primary-blue-50opacity: #a0c1d180;
     --primary-blue-10opacity: rgba(160, 193, 209, 0.1);
     --accent: #eaba6b;
+
     /* fonts */
     --primary-font: "Montserrat", sans-serif;
     --secondary-font: "Bebas Neue", sans-serif;
+
     /* shadows */
     --primary-boxshadow: 4px 4px 8px var(--primary-dark-50opacity);
     --primary-textshadow: 2px 2px 12px var(--primary-blue-50opacity);
+
     /* paddings */
     --horizontal-padding: 0 clamp(12px, 6vw, 100px);
 }
-body{
-    font-family: "Montserrat", sans-serif;
-    overflow: hidden;
+
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-dark-50opacity);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-white-50opacity);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }

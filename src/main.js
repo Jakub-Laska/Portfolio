@@ -8,7 +8,7 @@ import { initMainTechStack } from './mainTechStack.js';
 
 export function initMain() {
     initMainWelcome();
-    initMainAboutMe();
-    initMainSpline();
-    initMainTechStack();
+    // initMainAboutMe();
+    // initMainSpline();
+    // initMainTechStack();
 }
