@@ -1,0 +1,5 @@
+#mainMusic iframe {
+    width: clamp(80px, 80vw, 800px);
+    height: clamp(160px, 60vh, 800px);
+    border: none;
+}

@@ -9,18 +9,19 @@
     transition: left 0.2s ease, opacity 0.3s ease;
     opacity: 0;
 }
+
 #header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: var(--primary-black-90opacity);
-    backdrop-filter: blur(1px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     opacity: 0;
     z-index: 2;
+    background-image: url('./assets/background/background-grain.png');
 }
 
 .headerContainer {
@@ -68,12 +69,29 @@
     transform-origin: center;
 }
 
-.burger:hover span:nth-child(1) { transform: translateY(-4px); }
-.burger:hover span:nth-child(3) { transform: translateY(4px); }
-.burger.active span:nth-child(1) { transform: rotate(90deg) translate(10px, 0); }
-.burger.active span:nth-child(2) { opacity: 0; }
-.burger.active span:nth-child(3) { transform: rotate(-180deg) translate(0, 10px); }
-.burger.active { transform: rotate(45deg); }
+.burger:hover span:nth-child(1) {
+    transform: translateY(-4px);
+}
+
+.burger:hover span:nth-child(3) {
+    transform: translateY(4px);
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(90deg) translate(10px, 0);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-180deg) translate(0, 10px);
+}
+
+.burger.active {
+    transform: rotate(45deg);
+}
 
 .header-logo:hover,
 .burger:hover,
@@ -177,6 +195,7 @@
     background-color: var(--accent);
     opacity: 0.5;
 }
+
 @media (max-width: 600px) and (orientation: portrait) {
     .buttonContainer {
         flex-direction: column;
@@ -214,6 +233,7 @@
     .buttonContainer .darkmodeBtn {
         pointer-events: none;
     }
+
     .buttonContainer .skipBtn:hover,
     .buttonContainer .downloadBtn:hover,
     .buttonContainer .darkmodeContainer:hover,

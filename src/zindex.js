@@ -5,7 +5,6 @@ import { initBackground } from './background.js';
 import { initHeader } from './header.js';
 import { initMain } from './main.js';
 
-
 function initAll(){
 initSplashScreen()
 initBackground();

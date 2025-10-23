@@ -1,21 +1,13 @@
-.techStackContainer {
+.carouselContainer {
+    mask: linear-gradient(90deg, transparent, white 36%, white 64%, transparent);
     width: 80%;
     overflow: hidden;
-}
-
-#mainTechStack p {
-    text-align: center;
-    font-size: clamp(36px, 4vw, 64px);
-    font-weight: 900;
-    color: var(--primary-white);
-}
-
-.carousel {
-    mask: linear-gradient(90deg, transparent, white 36%, white 64%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 4vw, 64px);
 }
 
 .carousel-track {
-    padding-block: clamp(12px, 4vw, 24px);
     display: flex;
     gap: clamp(24px, 4vw, 64px);
     align-items: center;
@@ -44,9 +36,9 @@
 }
 
 .techIcon {
-    height: clamp(48px, 6vw, 128px);
+    height: clamp(64px, 6vw, 128px);
 }
 
 .skillIcon {
-    height: clamp(36px, 4vw, 96px);
+    height: clamp(32px, 4vw, 96px);
 }
