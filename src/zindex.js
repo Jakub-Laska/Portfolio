@@ -8,7 +8,7 @@ import { initMain } from './main.js';
 function initAll(){
 initSplashScreen()
 initBackground();
-initHeader();
+// initHeader();
 initMain();
 }
 initAll();
