@@ -1,0 +1,81 @@
+        .sticky_parent {
+            height: 500vh;
+
+        }
+
+        .sticky {
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+
+        }
+
+        .scroll_section {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            will-change: transform;
+            padding: 0 5vw;
+            transition: transform 0.2s ease-out;
+        }
+
+        body::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--primary-dark-50opacity);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: var(--primary-white-50opacity);
+
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        .fake-scrollbar {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: var(--primary-dark-50opacity);
+            border-radius: 3px;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .fake-scrollbar .bar {
+            height: 100%;
+            background: var(--primary-white-50opacity);
+            border-radius: 3px;
+        }
+
+        .bar:hover {
+            background: var(--accent);
+        }
+
+        .show-scrollbar .fake-scrollbar {
+            opacity: 1;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .fake-scrollbar {
+            cursor: pointer;
+        }
+
+        body:has(.fake-scrollbar:active) {
+            cursor: grabbing;
+        }

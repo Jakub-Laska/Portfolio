@@ -1,6 +1,5 @@
 body {
     font-family: var(--primary-font);
-    overflow: hidden;
     color: var(--primary-white);
 }
 
@@ -13,8 +12,11 @@ body {
     padding: var(--horizontal-padding);
     opacity: 0;
     margin: 100vh 0;
+    position: relative;
 }
-
+#mainContainer div {
+    width: 100%;
+}
 #mainContainer section {
     background-color: var(--primary-black-50opacity);
     width: 100%;
@@ -27,7 +29,7 @@ body {
     gap: clamp(12px, 10vh, 64px);
     z-index: 1;
     text-align: center;
-}
+} 
 
 #mainContainer section h1 {
     font-size: clamp(36px, 4vw, 48px);

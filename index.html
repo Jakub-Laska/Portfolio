@@ -2,55 +2,63 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Portfolio of Jakub Laska - web projects, frontend experiments, and self-learning journey.">
-  <meta name="keywords" content="portfolio, web developer, frontend, Jakub Laska, projects">
-  <meta name="author" content="Jakub Laska">
-  <meta property="og:title" content="Portfolio of Jakub Laska">
-  <meta property="og:description" content="Web projects, frontend experiments, and self-learning journey.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jakub-laska.github.io/Portfolio/">
-  <meta property="og:image" content="/preview.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#181819" id="theme-color">
+    content="Portfolio of Jakub Laska - web projects, frontend experiments, and self-learning journey." />
+  <meta name="keywords" content="portfolio, web developer, frontend, Jakub Laska, projects" />
+  <meta name="author" content="Jakub Laska" />
+  <meta property="og:title" content="Portfolio of Jakub Laska" />
+  <meta property="og:description" content="Web projects, frontend experiments, and self-learning journey." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jakub-laska.github.io/Portfolio/" />
+  <meta property="og:image" content="/preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#181819" id="theme-color" />
   <title>JL Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jakub-Laska/css-reset@latest/reset.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jakub-Laska/css-reset@latest/reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js" async></script>
   <script src="/src/zindex.js" type="module" defer></script>
 </head>
 
 <body>
-  <section id="splash-screen" aria-label="intro" role="dialog">
-  </section>
+  <section id="splash-screen" aria-label="intro" role="dialog"></section>
   <a href="#hero" class="skip-link">Skip to main content</a>
   <div id="background" aria-hidden="true" role="presentation"></div>
 
   <header id="header" role="banner" aria-label="Main Navigation"></header>
 
   <main id="mainContainer" role="main">
-
     <section id="mainWelcome"></section>
     <section id="mainAboutMe"></section>
-    <section id="mainOccupation"></section>
-    <section id="mainMusic"></section>
+
+    <div class="sticky_parent">
+      <div class="sticky">
+        <div class="scroll_section">
+          <section id="mainOccupation"></section>
+          <section id="mainMusic"></section>
+        </div>
+      </div>
+    </div>
+            <div class="fake-scrollbar">
+            <div class="bar"></div>
+        </div>
+
     <section id="mainSpline"></section>
     <section id="mainTechStack"></section>
-
   </main>
   <!-- <footer aria-label="Footer"></footer> -->
 </body>
