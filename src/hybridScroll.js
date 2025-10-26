@@ -1,14 +1,17 @@
 import './hybridScroll.css';
+import './background.css';
 
 export function initHybridScroll() {
+
   const stickySection = document.querySelector('.sticky');
   const scrollSection = document.querySelector('.scroll_section');
   const parent = stickySection.parentElement;
+  const gradients = document.querySelectorAll('.background-gradient');
+  const background = document.getElementById('background');
 
   const scrollbar = document.querySelector('.fake-scrollbar .bar');
-
   function updateTransform() {
-    const scrollStart = parent.offsetTop;
+    const scrollStart = parent.offsetTop + window.innerHeight;
     const scrollEnd = scrollStart + parent.offsetHeight - window.innerHeight;
 
     if (window.scrollY >= scrollStart && window.scrollY <= scrollEnd) {
@@ -18,11 +21,16 @@ export function initHybridScroll() {
       document.body.classList.add('hide-scrollbar');
       const maxScroll = scrollSection.scrollWidth - window.innerWidth;
       const translateX = -progress * maxScroll;
-
       scrollSection.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      gradients.forEach(element => {
+        element.classList.add('horizontal');
+      });
     } else {
       document.body.classList.remove('show-scrollbar');
       document.body.classList.remove('hide-scrollbar');
+      gradients.forEach(element => {
+        element.classList.remove('horizontal');
+      });
     }
   }
 
@@ -41,6 +49,7 @@ export function initHybridScroll() {
   window.addEventListener('resize', updateTransform);
 
   updateTransform();
+
 
   let isDragging = false;
   let startX = 0;
@@ -65,7 +74,7 @@ export function initHybridScroll() {
     const progressDelta = (deltaX / trackWidth) * 100;
     let newProgress = Math.min(Math.max(startScrollX + progressDelta, 0), 100);
 
-    const scrollStart = parent.offsetTop;
+    const scrollStart = parent.offsetTop + window.innerHeight;
     const maxScrollY = parent.offsetHeight - window.innerHeight;
 
     const targetScrollY = scrollStart + (maxScrollY * (newProgress / 100));
@@ -82,5 +91,4 @@ export function initHybridScroll() {
       document.body.style.cursor = '';
     }
   });
-
 }
