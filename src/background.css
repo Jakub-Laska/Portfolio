@@ -2,12 +2,12 @@
   position: fixed;
   width: clamp(128px, 20vw, 200px);
   height: clamp(128px, 20vw, 200px);
+  border-radius: 100%;
   pointer-events: none;
-  background-repeat: no-repeat;
-  filter: blur(36px);
   animation: float 2.5s ease-in-out infinite;
-  will-change: filter;
   transition: all 2s;
+  transform: translateZ(0);
+  filter: blur(clamp(16px, 4vw, 64px));
 }
 
 @keyframes float {
@@ -26,20 +26,29 @@
 
 .background-gradient.left {
   bottom: 40%;
-  left: 0%;
-  background-image: url('./assets/background/background-gradient-left.png');
+  left: -10%;
+  rotate: 0deg;
+  background: radial-gradient(circle at center, var(--primary-white), var(--primary-darkBlue), var(--primary-darkBlue));
+  animation-delay: 0s;
 }
 
 .background-gradient.left.horizontal {
-  bottom: 70%;
-  left: 90%;
+  bottom: 90%;
+  left: 100%;
   rotate: 180deg;
+  animation-delay: 0s;
 }
-
-.background-gradient.bot {
-  bottom: -20%;
+.background-gradient.left.vertical {
+  bottom: -30%;
   left: 50%;
-  background-image: url('./assets/background/background-gradient-bot.png');
+  rotate: 360deg;
+  animation-delay: 1s;
+}
+.background-gradient.bot {
+  bottom: -30%;
+  left: 50%;
+  rotate: 0deg;
+  background: radial-gradient(circle at center, var(--primary-white), var(--accent), var(--accent));
   animation-delay: 1s;
 }
 
@@ -47,21 +56,34 @@
   bottom: 40%;
   left: -10%;
   rotate: 180deg;
+  animation-delay: 0s;
 }
-
+.background-gradient.bot.vertical {
+  bottom: 90%;
+  left: 100%;
+  rotate: 360deg;
+  animation-delay: 0s;
+}
 .background-gradient.right {
   bottom: 90%;
-  left: 90%;
-  background-image: url('./assets/background/background-gradient-right.png');
+  left: 100%;
+  rotate: 0deg;
+  background: radial-gradient(circle at center, var(--primary-white), var(--primary-blue), var(--primary-blue));
+  animation-delay: 0s;
 }
 
 .background-gradient.right.horizontal {
-  bottom: -20%;
+  bottom: -30%;
   left: 50%;
   rotate: 180deg;
   animation-delay: 1s;
 }
-
+.background-gradient.right.vertical {
+  bottom: 40%;
+  left: -10%;
+  rotate: 360deg;
+  animation-delay: 0s;
+}
 .background-grain {
   position: fixed;
   top: 0;

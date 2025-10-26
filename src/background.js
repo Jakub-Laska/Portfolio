@@ -20,7 +20,7 @@ export function initBackground() {
       element.style.filter = `
       brightness(${brightness})
       saturate(${saturate})
-      blur(36px)
+      blur(clamp(16px, 4vw, 64px))
     `;
     });
   });

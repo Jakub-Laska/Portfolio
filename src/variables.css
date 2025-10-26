@@ -1,21 +1,29 @@
 :root{
     /* colors */
+    --primary-white: #DADFF7;
+    --primary-white-50opacity: #dadff780;
+    --primary-white-10opacity: rgba(218, 223, 247, 0.1);
+
     --primary-black: #181819;
     --primary-black-90opacity: rgba(24, 24, 25, 0.9);
     --primary-black-50opacity: rgba(24, 24, 25, 0.5);
     --primary-black-25opacity: rgba(24, 24, 25, 0.25);
     --primary-black-10opacity: rgba(24, 24, 25, 0.1);
-    --primary-white: #DADFF7;
-    --primary-white-50opacity: #dadff780;
-    --primary-white-10opacity: rgba(218, 223, 247, 0.1);
+
     --primary-dark: #232C33;
     --primary-dark-50opacity: #232c3380;
     --primary-dark-25opacity: rgba(35, 44, 51, 0.25);
     --primary-dark-10opacity: rgba(35, 44, 51, 0.1);
+
     --primary-blue: #A0C1D1;
     --primary-blue-50opacity: #a0c1d180;
     --primary-blue-10opacity: rgba(160, 193, 209, 0.1);
+
+    --primary-darkBlue: #4D6CFA;
+    --primary-darkBlue-50opacity: rgba(77, 109, 250, 0.5);
+
     --accent: #eaba6b;
+    --accent-50opacity: rgba(234, 185, 107, 0.5);
     --accent-10opacity: rgba(234, 185, 107, 0.1);
 
     /* fonts */

@@ -1,5 +1,4 @@
 import './hybridScroll.css';
-import './background.css';
 
 export function initHybridScroll() {
 
@@ -7,7 +6,6 @@ export function initHybridScroll() {
   const scrollSection = document.querySelector('.scroll_section');
   const parent = stickySection.parentElement;
   const gradients = document.querySelectorAll('.background-gradient');
-  const background = document.getElementById('background');
 
   const scrollbar = document.querySelector('.fake-scrollbar .bar');
   function updateTransform() {
@@ -23,14 +21,23 @@ export function initHybridScroll() {
       const translateX = -progress * maxScroll;
       scrollSection.style.transform = `translate3d(${translateX}px, 0, 0)`;
       gradients.forEach(element => {
+        element.classList.remove('vertical');
         element.classList.add('horizontal');
       });
-    } else {
+    } else if (window.scrollY <= scrollStart || window.scrollY >= scrollEnd) {
       document.body.classList.remove('show-scrollbar');
       document.body.classList.remove('hide-scrollbar');
-      gradients.forEach(element => {
-        element.classList.remove('horizontal');
-      });
+      if (window.scrollY <= scrollStart) {
+        gradients.forEach(element => {
+          element.classList.remove('horizontal');
+          element.classList.remove('vertical');
+        });
+      } else if (window.scrollY >= scrollEnd) {
+        gradients.forEach(element => {
+          element.classList.remove('horizontal');
+          element.classList.add('vertical');
+        });
+      }
     }
   }
 
