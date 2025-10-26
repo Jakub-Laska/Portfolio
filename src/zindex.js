@@ -9,7 +9,7 @@ import { initHybridScroll } from './hybridScroll.js';
 function initAll(){
 initSplashScreen()
 initBackground();
-// initHeader();
+initHeader();
 initMain();
 initHybridScroll();
 }

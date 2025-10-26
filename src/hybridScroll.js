@@ -6,8 +6,9 @@ export function initHybridScroll() {
   const scrollSection = document.querySelector('.scroll_section');
   const parent = stickySection.parentElement;
   const gradients = document.querySelectorAll('.background-gradient');
-
+  const header = document.getElementById('header');
   const scrollbar = document.querySelector('.fake-scrollbar .bar');
+
   function updateTransform() {
     const scrollStart = parent.offsetTop + window.innerHeight;
     const scrollEnd = scrollStart + parent.offsetHeight - window.innerHeight;
@@ -24,7 +25,9 @@ export function initHybridScroll() {
         element.classList.remove('vertical');
         element.classList.add('horizontal');
       });
+      header.style.transform = 'translateY(-200px)';
     } else if (window.scrollY <= scrollStart || window.scrollY >= scrollEnd) {
+      header.style.transform = 'translateY(0)';
       document.body.classList.remove('show-scrollbar');
       document.body.classList.remove('hide-scrollbar');
       if (window.scrollY <= scrollStart) {

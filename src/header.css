@@ -12,6 +12,7 @@
 
 #header {
     position: fixed;
+    opacity: 0;
     top: 0;
     width: 100%;
     background-color: var(--primary-black-90opacity);
@@ -19,7 +20,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    opacity: 0;
     z-index: 2;
     background-image: url('./assets/background/background-grain.png');
 }
