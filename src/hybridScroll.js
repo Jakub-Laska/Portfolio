@@ -1,16 +1,17 @@
 import './hybridScroll.css';
+
+export function initHybridScroll() {
+
   const stickySection = document.querySelector('.sticky');
   const scrollSection = document.querySelector('.scroll_section');
   const parent = stickySection.parentElement;
   const gradients = document.querySelectorAll('.background-gradient');
   const header = document.getElementById('header');
   const scrollbar = document.querySelector('.fake-scrollbar .bar');
-  const scrollStart = parent.offsetTop + window.innerHeight;
-  export const scrollEnd = scrollStart + parent.offsetHeight - window.innerHeight;
-
-export function initHybridScroll() {
 
   function updateTransform() {
+    const scrollStart = parent.offsetTop + window.innerHeight;
+    const scrollEnd = scrollStart + parent.offsetHeight - window.innerHeight;
 
     if (window.scrollY >= scrollStart && window.scrollY <= scrollEnd) {
       const progress = (window.scrollY - scrollStart) / (parent.offsetHeight - window.innerHeight);
