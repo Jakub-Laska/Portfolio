@@ -11,7 +11,6 @@ body {
     gap: 25vh;
     padding: var(--horizontal-padding);
     opacity: 0;
-    margin: 100vh 0;
     position: relative;
 }
 

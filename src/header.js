@@ -1,4 +1,5 @@
 import "./header.css";
+import { scrollEnd } from "./hybridScroll.js";
 const header = document.getElementById("header");
 
 export function initHeader() {
@@ -36,15 +37,46 @@ function renderHeader() {
     `;
 }
 // on click scroll to the top
+// function scrollUp() {
+//   const headerLogo = document.querySelector(".header-logo");
+//   if (!headerLogo) return;
+
+//   headerLogo.addEventListener("click", () => {
+//     document.body.style.transition = "opacity 0.2s";
+//     document.body.style.opacity = "0";
+//     setTimeout(() => {
+//       window.scrollTo(0, 0);
+//       document.body.style.opacity = "1";
+//     }, 200);
+//   });
+// }
 function scrollUp() {
   const headerLogo = document.querySelector(".header-logo");
+  if (!headerLogo) return;
+
   headerLogo.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    const start = window.scrollY;
+    const duration = window.scrollY > scrollEnd ? 2000 : 300;
+    const startTime = performance.now();
+
+    function animateScroll(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      window.scrollTo(0, start * (1 - ease));
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        document.body.style.opacity = "1";
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
   });
 }
+
 // typing animation
 function animateLogo() {
   const headerLogo = document.querySelector(".header-logo");
