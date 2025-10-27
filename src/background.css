@@ -5,9 +5,9 @@
   border-radius: 100%;
   pointer-events: none;
   animation: float 2.5s ease-in-out infinite;
-  transition: all 2s;
-  transform: translateZ(0);
+  transition: all 2s ease;
   filter: blur(clamp(16px, 4vw, 64px));
+  z-index: -2;
 }
 
 @keyframes float {
@@ -16,7 +16,7 @@
   }
 
   50% {
-    transform: translate(-16px, -16px) scale(2.1)
+    transform: translate(8px, 8px) scale(1.9)
   }
 
   100% {
@@ -93,4 +93,5 @@
   pointer-events: none;
   background-image: url('./assets/background/background-grain.png');
   background-repeat: repeat;
+  z-index: -1;
 }

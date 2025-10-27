@@ -12,6 +12,7 @@ body {
     padding: var(--horizontal-padding);
     opacity: 0;
     position: relative;
+    margin: 100vh 0;
 }
 
 #mainContainer div {
