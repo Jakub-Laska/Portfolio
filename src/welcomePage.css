@@ -9,6 +9,7 @@
   text-transform: uppercase;
   line-height: 1.5;
   filter: drop-shadow(0px 0px 20px var(--primary-black));
+  overflow: hidden;
 }
 #welcomePage h1 {
   font-size: clamp(32px, 4vw, 96px);
@@ -21,4 +22,23 @@
 .underscore {
   color: var(--accent);
 }
-
+.jokeAnimation{
+    display: inline-block;
+    animation: joke 5s forwards;
+    transform: translateX(1000px);
+    opacity: 0;
+}
+@keyframes joke {
+    from { transform: translateX(1000px); opacity: 0;}
+    100% { transform: translateX(0px); opacity: 1; }
+}
+.anywayAnimation{
+    display: inline-block;
+    animation: anyway 10s forwards;
+    transform: translateY(1000px);
+    opacity: 0;
+}
+@keyframes anyway {
+    from { transform: translateY(1000px); opacity: 0;}
+    100% { transform: translateY(0px); opacity: 1; }
+}
