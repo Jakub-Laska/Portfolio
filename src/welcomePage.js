@@ -60,6 +60,7 @@ function animateAnyway() {
             }
         }
         pixel.style.textDecoration = 'line-through';
+        pixel.style.textDecorationColor = 'var(--accent)';
         type();
     }, 10000);
     setTimeout(() => {
