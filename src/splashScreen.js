@@ -30,12 +30,11 @@ export function initSplashScreen() {
     }, 2300);
 
     setTimeout(() => {
-        document.body.style.overflow = "auto";
         mainContainer.style.opacity = "1";
         welcomePage.style.transition = "2s ease-in-out";
         welcomePage.style.opacity = "1";
     }, 3300);
-        setTimeout(() => {
+    setTimeout(() => {
 
         header.style.opacity = "1";
     }, 8000);

@@ -1,6 +1,6 @@
 import "./welcomePage.css";
 
-export function initWelcomePage(){
+export function initWelcomePage() {
     const welcomePage = document.querySelector('#welcomePage');
     welcomePage.innerHTML = `
 
@@ -16,50 +16,53 @@ export function initWelcomePage(){
     joke.classList.add('jokeAnimation');
     const anyway = document.querySelector('.anyway');
     anyway.classList.add('anywayAnimation');
+    animateJoke();
+    animateAnyway();
 
-animateJoke();
-animateAnyway();
 }
-    // typing animations
+// typing animations
 function animateJoke() {
     const joke = document.querySelector('.joke');
-  setTimeout(() => {
-    joke.style.opacity = '1';
-    const words = [
-      "which i happen to ignore...",
-    ];
-    let i = 0; // word index
-    let j = 0; // letter index
-    function type() {
-      const currentWord = words[i];
-        joke.textContent = currentWord.slice(0, j++);
-        if (j <= currentWord.length) {
-          setTimeout(type, 150); // type speed
+    setTimeout(() => {
+        joke.style.opacity = '1';
+        const words = [
+            "which i happen to ignore...",
+        ];
+        let i = 0; // word index
+        let j = 0; // letter index
+        function type() {
+            const currentWord = words[i];
+            joke.textContent = currentWord.slice(0, j++);
+            if (j <= currentWord.length) {
+                setTimeout(type, 150); // type speed
+            }
         }
-    }
 
-    type();
-  }, 5000); 
+        type();
+    }, 5000);
 }
 
 function animateAnyway() {
     const anyway = document.querySelector('.anyway');
     const pixel = document.querySelector('.pixel');
-  setTimeout(() => {
-    anyway.style.opacity = '1';
-    const words = [
-      "anyway... let me show you around.",
-    ];
-    let i = 0; // word index
-    let j = 0; // letter index
-    function type() {
-      const currentWord = words[i];
-        anyway.textContent = currentWord.slice(0, j++);
-        if (j <= currentWord.length) {
-          setTimeout(type, 150); // type speed
+    setTimeout(() => {
+        anyway.style.opacity = '1';
+        const words = [
+            "anyway... let me show you around.",
+        ];
+        let i = 0; // word index
+        let j = 0; // letter index
+        function type() {
+            const currentWord = words[i];
+            anyway.textContent = currentWord.slice(0, j++);
+            if (j <= currentWord.length) {
+                setTimeout(type, 150); // type speed
+            }
         }
-    }
-    pixel.style.textDecoration = 'line-through';
-    type();
-  }, 10000); 
+        pixel.style.textDecoration = 'line-through';
+        type();
+    }, 10000);
+    setTimeout(() => {
+        document.body.style.overflow = 'auto';
+    }, 14950);
 }

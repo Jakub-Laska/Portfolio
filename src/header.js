@@ -50,9 +50,9 @@ function renderHeader() {
 //   });
 // }
 function scrollUp() {
-      const sticky = document.querySelector('.sticky');
-    const scrollStart = sticky.offsetTop + window.innerHeight;
-    const scrollEnd = scrollStart + sticky.offsetHeight - window.innerHeight;
+  const sticky = document.querySelector('.sticky');
+  const scrollStart = sticky.offsetTop + window.innerHeight;
+  const scrollEnd = scrollStart + sticky.offsetHeight - window.innerHeight;
   const headerLogo = document.querySelector(".header-logo");
   if (!headerLogo) return;
 
