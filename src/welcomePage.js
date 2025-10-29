@@ -7,7 +7,7 @@ export function initWelcomePage(){
     <div>
         <h1>welcome, glad to have you <span class="underscore">here.</span></h1>
         <p>let me introduce myself - i'm jakub laska, an aspiring web developer.</p>
-        <p>'pixel perfect' is my motto, <span class="joke">which i happen to ignore.</span></p><br>
+        <p><span class="pixel">'pixel perfect'</span> is my motto, <span class="joke">which i happen to ignore.</span></p><br>
         <p class="anyway">anyway... let me show you around.</p>
     </div>
 
@@ -16,7 +16,6 @@ export function initWelcomePage(){
     joke.classList.add('jokeAnimation');
     const anyway = document.querySelector('.anyway');
     anyway.classList.add('anywayAnimation');
-
 
 animateJoke();
 animateAnyway();
@@ -40,11 +39,12 @@ function animateJoke() {
     }
 
     type();
-  }, 3300); 
+  }, 5000); 
 }
 
 function animateAnyway() {
     const anyway = document.querySelector('.anyway');
+    const pixel = document.querySelector('.pixel');
   setTimeout(() => {
     anyway.style.opacity = '1';
     const words = [
@@ -59,7 +59,7 @@ function animateAnyway() {
           setTimeout(type, 150); // type speed
         }
     }
-
+    pixel.style.textDecoration = 'line-through';
     type();
-  }, 7350); 
+  }, 10000); 
 }

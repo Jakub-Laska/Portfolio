@@ -114,7 +114,7 @@ function animateLogo() {
     }
 
     type();
-  }, 3300);
+  }, 8100);
 }
 // cursor highlight
 function highlight() {

@@ -1,7 +1,10 @@
 import "./splashScreen.css";
 
 export function initSplashScreen() {
+    window.history.scrollRestoration = "manual";
+    document.body.style.overflow = "hidden";
     const splashScreen = document.getElementById("splash-screen");
+    const welcomePage = document.getElementById('welcomePage');
     const mainContainer = document.querySelector("#mainContainer");
     const header = document.querySelector("#header");
     splashScreen.innerHTML = '<span class="splash-span">jakub</span><span class="splash-span">laska.</span>';
@@ -18,22 +21,29 @@ export function initSplashScreen() {
             setTimeout(() => {
                 span.classList.remove("active");
                 span.classList.add("fade");
-            }, (index + 1) * 50);
+            }, (index + 1) * 300);
         });
-    }, 200);
+    }, 2000);
 
     setTimeout(() => {
         splashScreen.style.top = "-100vh";
-    }, 300);
+    }, 2300);
 
     setTimeout(() => {
         document.body.style.overflow = "auto";
         mainContainer.style.opacity = "1";
+        welcomePage.style.transition = "2s ease-in-out";
+        welcomePage.style.opacity = "1";
+    }, 3300);
+        setTimeout(() => {
+
         header.style.opacity = "1";
-    }, 1300);
+    }, 8000);
 }
 // Timing breakdown:
+// 30
 // 300
 // 2000
 // 2300
 // 3300
+// 8000
