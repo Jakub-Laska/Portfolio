@@ -2,7 +2,7 @@ import "./splashScreen.css";
 
 export function initSplashScreen() {
     window.history.scrollRestoration = "manual";
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     const splashScreen = document.getElementById("splash-screen");
     const welcomePage = document.getElementById('welcomePage');
     const mainContainer = document.querySelector("#mainContainer");
@@ -13,7 +13,7 @@ export function initSplashScreen() {
     spans.forEach((span, index) => {
         setTimeout(() => {
             span.classList.add("active");
-        }, (index + 1) * 30);
+        }, (index + 1) * 80);
     });
 
     setTimeout(() => {
@@ -21,13 +21,13 @@ export function initSplashScreen() {
             setTimeout(() => {
                 span.classList.remove("active");
                 span.classList.add("fade");
-            }, (index + 1) * 300);
+            }, (index + 1) * 400);
         });
-    }, 2000);
+    }, 2600);
 
     setTimeout(() => {
         splashScreen.style.top = "-100vh";
-    }, 2300);
+    }, 3200);
 
     setTimeout(() => {
         mainContainer.style.opacity = "1";

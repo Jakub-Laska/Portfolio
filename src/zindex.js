@@ -6,13 +6,15 @@ import { initHeader } from './header.js';
 import { initWelcomePage } from './welcomePage.js';
 import { initMain } from './main.js';
 import { initHybridScroll } from './hybridScroll.js';
+import { initFooter } from './initFooter.js';
 
 function initAll(){
 initSplashScreen()
 initBackground();
-initWelcomePage();
+// initWelcomePage();
 initHeader();
 initMain();
 initHybridScroll();
+initFooter();
 }
 initAll();
