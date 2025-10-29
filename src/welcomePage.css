@@ -22,23 +22,9 @@
 .underscore {
   color: var(--accent);
 }
-.jokeAnimation{
-    display: inline-block;
-    animation: joke 5s forwards;
-    transform: translateX(1000px);
-    opacity: 0;
-}
-@keyframes joke {
-    from { transform: translateX(1000px); opacity: 0;}
-    100% { transform: translateX(0px); opacity: 1; }
-}
+.jokeAnimation,
 .anywayAnimation{
-    display: inline-block;
-    animation: anyway 10s forwards;
-    transform: translateY(1000px);
     opacity: 0;
 }
-@keyframes anyway {
-    from { transform: translateY(1000px); opacity: 0;}
-    100% { transform: translateY(0px); opacity: 1; }
-}
+
+
