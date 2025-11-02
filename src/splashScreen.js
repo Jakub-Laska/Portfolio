@@ -7,22 +7,16 @@ export function initSplashScreen() {
     const welcomePage = document.getElementById('welcomePage');
     const mainContainer = document.querySelector("#mainContainer");
     const header = document.querySelector("#header");
-    splashScreen.innerHTML = '<span class="splash-span">jakub</span><span class="splash-span">laska.</span>';
-    const spans = document.querySelectorAll(".splash-span");
+    splashScreen.innerHTML = `<p class="logo">jakub laska<span>.</span></p>`;
+    const logo = document.querySelector(".logo");
 
-    spans.forEach((span, index) => {
         setTimeout(() => {
-            span.classList.add("active");
-        }, (index + 1) * 80);
-    });
+            logo.classList.add("active");
+        }, 80);
 
     setTimeout(() => {
-        spans.forEach((span, index) => {
-            setTimeout(() => {
-                span.classList.remove("active");
-                span.classList.add("fade");
-            }, (index + 1) * 400);
-        });
+            logo.classList.remove("active");
+            logo.classList.add("fade");
     }, 2600);
 
     setTimeout(() => {
@@ -34,8 +28,8 @@ export function initSplashScreen() {
         welcomePage.style.transition = "2s ease-in-out";
         welcomePage.style.opacity = "1";
     }, 3300);
-    setTimeout(() => {
 
+    setTimeout(() => {
         header.style.opacity = "1";
     }, 8000);
 }

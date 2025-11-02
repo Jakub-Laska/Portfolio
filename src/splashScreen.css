@@ -12,25 +12,26 @@
     gap: 1.5vw;
     transition: top 1s;
 }
-
-.splash-span {
-    font-size: clamp(16px, 2.5vw, 50px);
-    font-family: var(--primary-font);
+#splash-screen p {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 900;
+    font-size: 10vw;
+    line-height: 1;
+    color: var(--primary-white-10opacity);
+    letter-spacing: -4vw;
+    text-align: left;
     opacity: 0;
-    transform: translateY(10vh);
-    transition: none;
-    color: var(--primary-white);
 }
-
-.splash-span.active {
+#splash-screen span {
+    margin-left: 2.5vw;
+}
+#splash-screen p.active {
     opacity: 1;
     transform: translateY(0);
     transition: all 0.5s ease-in-out;
 }
 
-.splash-span.fade {
+#splash-screen p.fade {
     opacity: 0;
     transform: translateY(-30vh);
     transition: all 0.5s ease-in-out;
