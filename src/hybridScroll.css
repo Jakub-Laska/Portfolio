@@ -64,6 +64,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: 100%;
     background: var(--primary-white-50opacity);
     border-radius: 3px;
+    transition: none;
 }
 
 .bar:hover {
