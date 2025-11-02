@@ -21,16 +21,17 @@ export function initSplashScreen() {
 
     setTimeout(() => {
         splashScreen.style.top = "-100vh";
-    }, 3200);
+    }, 3000);
 
     setTimeout(() => {
         mainContainer.style.opacity = "1";
         welcomePage.style.transition = "2s ease-in-out";
         welcomePage.style.opacity = "1";
-    }, 3300);
+    }, 3100);
 
     setTimeout(() => {
         header.style.opacity = "1";
+        header.style.transition = '1s ease';
     }, 8000);
 }
 // Timing breakdown:

@@ -9,6 +9,8 @@
     align-items: center;
     justify-content: space-between;
     color: transparent;
+    transition: none;
+    opacity: 0;
 }
 body,
 #foooter {

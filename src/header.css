@@ -22,6 +22,8 @@
     justify-content: space-between;
     z-index: 2;
     background-image: url('./assets/background/background-grain.png');
+    transition: none;
+    opacity: 0;
 }
 
 .headerContainer {
@@ -39,10 +41,11 @@
     font-family: var(--secondary-font);
     text-transform: uppercase;
     font-size: clamp(14px, 4vw, 48px);
-    border-right: 1px solid var(--primary-white);
-    animation: blink 0.7s step-end infinite;
+    border-right: 1px solid var(--primary-white-10opacity);
+    animation: blink 0.9s step-end infinite;
     cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease, text-shadow 0.3s ease;
+    transition: transform 0.7s ease, filter 0.7s ease, text-shadow 0.7s ease;
+    padding-right: 4px;
 }
 
 @keyframes blink {
