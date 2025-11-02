@@ -4,9 +4,25 @@
     position: sticky;
     bottom: 0;
     z-index: -4;
-    padding: var(--axial-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: transparent;
 }
 body,
 #foooter {
     background-color: var(--primary-black);
+}
+#footer .name {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 10vw;
+    line-height: 1;
+    color: var(--primary-white-10opacity);
+    letter-spacing: -4vw;
+    text-align: left;
+}
+#footer span {
+    margin-left: 2.5vw;
 }
