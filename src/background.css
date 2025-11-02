@@ -38,12 +38,14 @@
   rotate: 180deg;
   animation-delay: 0s;
 }
+
 .background-gradient.left.vertical {
   bottom: -30%;
   left: 50%;
   rotate: 360deg;
   animation-delay: 1s;
 }
+
 .background-gradient.bot {
   bottom: -30%;
   left: 50%;
@@ -58,12 +60,14 @@
   rotate: 180deg;
   animation-delay: 0s;
 }
+
 .background-gradient.bot.vertical {
   bottom: 90%;
   left: 100%;
   rotate: 360deg;
   animation-delay: 0s;
 }
+
 .background-gradient.right {
   bottom: 90%;
   left: 100%;
@@ -78,20 +82,31 @@
   rotate: 180deg;
   animation-delay: 1s;
 }
+
 .background-gradient.right.vertical {
   bottom: 40%;
   left: -10%;
   rotate: 360deg;
   animation-delay: 0s;
 }
-.background-grain {
+
+.container {
+  position: relative;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(black, black);
+  mask-image: linear-gradient(black, black);
+  mask-composite: intersect;
+  border-bottom-left-radius: 64px;
+  border-bottom-right-radius: 64px;
+  background-color: black;
+}
+
+.container::before {
+  content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+  inset: 0;
   background-image: url('./assets/background/background-grain.png');
   background-repeat: repeat;
+  pointer-events: none;
   z-index: -1;
 }

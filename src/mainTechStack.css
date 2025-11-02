@@ -1,3 +1,6 @@
+#mainTechStack{
+    margin-bottom: 100vh;
+}
 .carouselContainer {
     mask: linear-gradient(90deg, transparent, white 36%, white 64%, transparent);
     width: 80%;

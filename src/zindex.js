@@ -11,8 +11,8 @@ import { initFooter } from './footer.js';
 function initAll(){
 initSplashScreen()
 initBackground();
-// initWelcomePage();
-// initHeader();
+initWelcomePage();
+initHeader();
 initMain();
 initHybridScroll();
 initFooter();
