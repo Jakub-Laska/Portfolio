@@ -3,7 +3,6 @@
     height: 80vh;
     position: sticky;
     bottom: 0;
-    z-index: -4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +42,21 @@ body,
     opacity: .1;
     animation: breathe 4s ease-in-out infinite;
 }
-
 @keyframes breathe {
   0%, 100% { opacity: 0.1; }
   50% { opacity: 0.2; }
+}
+.quote{
+    position: absolute;
+    bottom: 10vh;
+    right: 1vw;
+    line-height: 1;
+    opacity: .1;
+    display: flex;
+}
+.quote button{
+    padding: 5px;
+    background-color: aliceblue;
+    color: var(--primary-black);
+    border-radius: 5px;
 }
