@@ -41,4 +41,10 @@ body,
     left: 0;
     line-height: 1;
     opacity: .1;
+    animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
 }
