@@ -9,6 +9,7 @@
     justify-content: space-between;
     transition: none;
     padding: var(--horizontal-padding);
+    overflow: hidden;
 }
 body,
 #foooter {
@@ -21,8 +22,8 @@ body,
     line-height: 1;
     color: var(--primary-white-10opacity);
     letter-spacing: -4vw;
-    text-align: left;
     opacity: .1;
+    transform: translateY(2.8vh);
 }
 #footer span {
     margin-left: 2.5vw;
@@ -40,20 +41,35 @@ body,
     left: 0;
     line-height: 1;
     opacity: .1;
-    animation: breathe 4s ease-in-out infinite;
+    animation: breathe 6s ease-in-out infinite;
+    font-size: .5em;
 }
 @keyframes breathe {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.2; }
+  0%, 100% {
+    opacity: 0.1;
+    text-shadow: none;
+  }
+  25% {
+    opacity: 0.15;
+    text-shadow: 0 0 10px var(--primary-white);
+  }
+  50% {
+    opacity: 0.22;
+    text-shadow: 0 0 25px var(--primary-white);
+  }
+  75% {
+    opacity: 0.15;
+    text-shadow: 0 0 10px var(--primary-white);
+  }
 }
 .quote{
     position: absolute;
-    bottom: 15vh;
+    bottom: 13vh;
     right: clamp(12px, 6vw, 100px);
     line-height: 1;
     opacity: .1;
     display: flex;
-    animation: breathe 4s ease-in-out infinite;
+    animation: breathe 6s ease-in-out infinite;
 }
 .quote div {
     display: flex;
@@ -62,9 +78,8 @@ body,
 }
 .quote button{
     padding: 5px;
-    background-color: aliceblue;
+    background-color: var(--primary-white);
     color: var(--primary-black);
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 900;
-    border: none;
 }
