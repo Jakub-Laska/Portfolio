@@ -48,15 +48,23 @@ body,
 }
 .quote{
     position: absolute;
-    bottom: 10vh;
-    right: 1vw;
+    bottom: 15vh;
+    right: clamp(12px, 6vw, 100px);
     line-height: 1;
     opacity: .1;
     display: flex;
+    animation: breathe 4s ease-in-out infinite;
+}
+.quote div {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
 }
 .quote button{
     padding: 5px;
     background-color: aliceblue;
     color: var(--primary-black);
     border-radius: 5px;
+    font-weight: 900;
+    border: none;
 }
