@@ -1,4 +1,4 @@
-#footer{
+#footer {
     width: 100%;
     height: 80vh;
     position: sticky;
@@ -7,14 +7,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: none;
     padding: var(--horizontal-padding);
     overflow: hidden;
+    background: var(--primary-black);
+    transition: filter 0.1s ease-in-out;
+    will-change: filter;
 }
+
 body,
 #foooter {
     background-color: var(--primary-black);
 }
+
 #footer .logo {
     text-transform: uppercase;
     font-weight: 900;
@@ -25,9 +29,11 @@ body,
     opacity: .1;
     transform: translateY(2.8vh);
 }
+
 #footer span {
     margin-left: 2.5vw;
 }
+
 #footer h1 {
     font-family: var(--secondary-font);
     letter-spacing: 2px;
@@ -35,48 +41,58 @@ body,
     text-align: left;
     width: 100%;
 }
-#footer .signature{
+
+#footer .signature {
     position: absolute;
     bottom: 0;
     left: 0;
     line-height: 1;
     opacity: .1;
-    animation: breathe 6s ease-in-out infinite;
+    animation: breathe 2s ease-in-out infinite;
     font-size: .5em;
 }
+
 @keyframes breathe {
-  0%, 100% {
-    opacity: 0.1;
-    text-shadow: none;
-  }
-  25% {
-    opacity: 0.15;
-    text-shadow: 0 0 10px var(--primary-white);
-  }
-  50% {
-    opacity: 0.22;
-    text-shadow: 0 0 25px var(--primary-white);
-  }
-  75% {
-    opacity: 0.15;
-    text-shadow: 0 0 10px var(--primary-white);
-  }
+
+    0%,
+    100% {
+        opacity: 0.1;
+        text-shadow: none;
+    }
+
+    25% {
+        opacity: 0.15;
+        text-shadow: 0 0 20px var(--primary-white);
+    }
+
+    50% {
+        opacity: 0.22;
+        text-shadow: 0 0 50px var(--primary-white);
+    }
+
+    75% {
+        opacity: 0.15;
+        text-shadow: 0 0 20px var(--primary-white);
+    }
 }
-.quote{
+
+.quote {
     position: absolute;
     bottom: 13vh;
     right: clamp(12px, 6vw, 100px);
     line-height: 1;
     opacity: .1;
     display: flex;
-    animation: breathe 6s ease-in-out infinite;
+    animation: breathe 2s ease-in-out infinite;
 }
+
 .quote div {
     display: flex;
     gap: 1vw;
     align-items: center;
 }
-.quote button{
+
+.quote button {
     padding: 5px;
     background-color: var(--primary-white);
     color: var(--primary-black);

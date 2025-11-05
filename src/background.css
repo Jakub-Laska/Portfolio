@@ -32,40 +32,12 @@
   animation-delay: 0s;
 }
 
-.background-gradient.left.horizontal {
-  bottom: 90%;
-  left: 100%;
-  rotate: 180deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.left.vertical {
-  bottom: -30%;
-  left: 50%;
-  rotate: 360deg;
-  animation-delay: 1s;
-}
-
 .background-gradient.bot {
   bottom: -30%;
   left: 50%;
   rotate: 0deg;
   background: radial-gradient(circle at center, var(--primary-white), var(--accent), var(--accent));
   animation-delay: 1s;
-}
-
-.background-gradient.bot.horizontal {
-  bottom: 40%;
-  left: -10%;
-  rotate: 180deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.bot.vertical {
-  bottom: 90%;
-  left: 100%;
-  rotate: 360deg;
-  animation-delay: 0s;
 }
 
 .background-gradient.right {
@@ -76,6 +48,20 @@
   animation-delay: 0s;
 }
 
+.background-gradient.bot.horizontal {
+  bottom: 40%;
+  left: -10%;
+  rotate: 180deg;
+  animation-delay: 0s;
+}
+
+.background-gradient.left.horizontal {
+  bottom: 90%;
+  left: 100%;
+  rotate: 180deg;
+  animation-delay: 0s;
+}
+
 .background-gradient.right.horizontal {
   bottom: -30%;
   left: 50%;
@@ -83,9 +69,44 @@
   animation-delay: 1s;
 }
 
+.background-gradient.left.vertical {
+  bottom: -30%;
+  left: 50%;
+  rotate: 360deg;
+  animation-delay: 1s;
+}
+
+.background-gradient.bot.vertical {
+  bottom: 90%;
+  left: 100%;
+  rotate: 360deg;
+  animation-delay: 0s;
+}
+
 .background-gradient.right.vertical {
   bottom: 40%;
   left: -10%;
+  rotate: 360deg;
+  animation-delay: 0s;
+}
+
+.background-gradient.left.footer {
+  bottom: 70%;
+  left: 10%;
+  rotate: 360deg;
+  animation-delay: 0s;
+}
+
+.background-gradient.bot.footer {
+  bottom: 70%;
+  left: 50%;
+  rotate: 360deg;
+  animation-delay: 1s;
+}
+
+.background-gradient.right.footer {
+  bottom: 70%;
+  left: 90%;
   rotate: 360deg;
   animation-delay: 0s;
 }

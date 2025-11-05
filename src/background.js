@@ -2,10 +2,10 @@ import './background.css';
 export function initBackground() {
   const background = document.getElementById('background');
   background.innerHTML = `
-      <div class="background-gradient left"></div>
-      <div class="background-gradient bot"></div>
-      <div class="background-gradient right"></div>
-  <div class="background-grain"></div>
+    <div class="background-gradient left"></div>
+    <div class="background-gradient bot"></div>
+    <div class="background-gradient right"></div>
+    <div class="background-grain"></div>
   `;
   const gradients = document.querySelectorAll(".background-gradient");
 
@@ -13,8 +13,8 @@ export function initBackground() {
     const scrollY = window.scrollY;
 
     gradients.forEach((element, i) => {
-      const brightness = 1 + Math.sin(scrollY * 0.02 + i) * 0.08;
-      const saturate = 1 + Math.sin(scrollY * 0.016 + i) * 0.2;
+      const brightness = 1 + Math.sin(scrollY * 0.02 + i) * 0.1;
+      const saturate = 1 + Math.sin(scrollY * 0.016 + i) * 0.4;
 
 
       element.style.filter = `

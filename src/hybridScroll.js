@@ -35,23 +35,25 @@ export function initHybridScroll() {
       header.style.transform = 'translateY(-200px)';
     } else {
       header.style.transform = 'translateY(0)';
-      document.body.classList.remove('show-scrollbar');
-      document.body.classList.remove('hide-scrollbar');
+      document.body.classList.remove('show-scrollbar', 'hide-scrollbar');
 
       if (window.scrollY <= scrollStart) {
         gradients.forEach(element => {
-          element.classList.remove('horizontal');
+          element.classList.remove('horizontal', 'vertical', 'footer');
+        });
+      } else if (window.scrollY >= (document.body.offsetHeight - (window.innerHeight * 1.2))) {
+        gradients.forEach(element => {
           element.classList.remove('vertical');
+          element.classList.add('footer');
         });
       } else if (window.scrollY >= scrollEnd) {
         gradients.forEach(element => {
-          element.classList.remove('horizontal');
+          element.classList.remove('footer', 'horizontal');
           element.classList.add('vertical');
         });
       }
     }
   }
-
   let ticking = false;
 
   window.addEventListener('scroll', () => {
