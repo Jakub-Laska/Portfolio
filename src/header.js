@@ -7,7 +7,8 @@ export function initHeader() {
   animateLogo();
   highlight();
   initBurgerMenu();
-  darkmode()
+  darkmode();
+  hideHeader();
 }
 // Render header
 function renderHeader() {
@@ -36,19 +37,6 @@ function renderHeader() {
     `;
 }
 // on click scroll to the top
-// function scrollUp() {
-//   const headerLogo = document.querySelector(".header-logo");
-//   if (!headerLogo) return;
-
-//   headerLogo.addEventListener("click", () => {
-//     document.body.style.transition = "opacity 0.2s";
-//     document.body.style.opacity = "0";
-//     setTimeout(() => {
-//       window.scrollTo(0, 0);
-//       document.body.style.opacity = "1";
-//     }, 200);
-//   });
-// }
 function scrollUp() {
   const sticky = document.querySelector('.sticky');
   const scrollStart = sticky.offsetTop + window.innerHeight;
@@ -174,4 +162,19 @@ function darkmode() {
     dark = !dark;
   });
 }
+// hide header
+function hideHeader() {
+  let lastScrollY = window.scrollY;
 
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY + 10) {
+      header.style.top = '-200px';
+    } else if (currentScrollY < lastScrollY - 10) {
+      header.style.top = '0px';
+    }
+
+    lastScrollY = currentScrollY;
+  });
+}

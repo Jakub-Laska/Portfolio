@@ -11,9 +11,9 @@
 }
 
 #header {
-    position: fixed;
     opacity: 0;
-    top: 0;
+    position: fixed;
+    top: -200px;
     width: 100%;
     background-color: var(--primary-black-90opacity);
     display: flex;
@@ -21,9 +21,8 @@
     align-items: center;
     justify-content: space-between;
     background-image: url('./assets/background/background-grain.png');
-    transition: none;
-    opacity: 0;
     z-index: 2;
+    transition: .3s ease;
 }
 
 .headerContainer {

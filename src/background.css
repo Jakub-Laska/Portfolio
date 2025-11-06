@@ -92,21 +92,21 @@
 
 .background-gradient.left.footer {
   bottom: 70%;
-  left: 10%;
+  left: 50%;
   rotate: 360deg;
   animation-delay: 0s;
 }
 
 .background-gradient.bot.footer {
   bottom: 70%;
-  left: 50%;
+  left: 90%;
   rotate: 360deg;
   animation-delay: 1s;
 }
 
 .background-gradient.right.footer {
   bottom: 70%;
-  left: 90%;
+  left: 10%;
   rotate: 360deg;
   animation-delay: 0s;
 }

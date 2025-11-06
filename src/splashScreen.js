@@ -10,13 +10,13 @@ export function initSplashScreen() {
     splashScreen.innerHTML = `<p class="logo">jakub laska<span>.</span></p>`;
     const logo = document.querySelector(".logo");
 
-        setTimeout(() => {
-            logo.classList.add("active");
-        }, 80);
+    setTimeout(() => {
+        logo.classList.add("active");
+    }, 80);
 
     setTimeout(() => {
-            logo.classList.remove("active");
-            logo.classList.add("fade");
+        logo.classList.remove("active");
+        logo.classList.add("fade");
     }, 2600);
 
     setTimeout(() => {
@@ -30,8 +30,7 @@ export function initSplashScreen() {
     }, 3100);
 
     setTimeout(() => {
-        header.style.opacity = "1";
-        header.style.transition = '1s ease';
+        header.style.top = "0px";
     }, 8000);
 }
 // Timing breakdown:

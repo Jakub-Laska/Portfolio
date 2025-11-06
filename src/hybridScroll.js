@@ -32,9 +32,9 @@ export function initHybridScroll() {
         element.classList.remove('vertical');
         element.classList.add('horizontal');
       });
-      header.style.transform = 'translateY(-200px)';
+      header.style.opacity = '0';
     } else {
-      header.style.transform = 'translateY(0)';
+      header.style.opacity = '1';
       document.body.classList.remove('show-scrollbar', 'hide-scrollbar');
 
       if (window.scrollY <= scrollStart) {

@@ -12,9 +12,9 @@ function initAll(){
 initSplashScreen()
 initBackground();
 initWelcomePage();
-initHeader();
 initMain();
 initHybridScroll();
 initFooter();
+initHeader();
 }
 initAll();
