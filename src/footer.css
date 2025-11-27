@@ -1,6 +1,6 @@
 #footer {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: sticky;
     bottom: 0;
     display: flex;
@@ -12,11 +12,22 @@
     background: var(--primary-black);
     transition: filter 0.1s ease-in-out;
     will-change: filter;
+    padding: 0;
 }
 
 body,
 #foooter {
     background-color: var(--primary-black);
+}
+#footer .footer-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vh;
+    position: relative;
 }
 
 #footer .logo {
@@ -40,6 +51,8 @@ body,
     font-size: 5vw;
     text-align: left;
     width: 100%;
+    padding: var(--horizontal-padding);
+
 }
 
 #footer .signature {
@@ -98,4 +111,45 @@ body,
     color: var(--primary-black);
     border-radius: 6px;
     font-weight: 900;
+}
+
+.links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    font-size: 2vw;
+    padding: var(--horizontal-padding);
+
+}
+.contact-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.contact-links div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .2vw;
+}
+.links a,
+.links button {
+    color: var(--primary-white-10opacity);
+    transition: color 0.2s ease-in-out;
+    font-weight: 100;
+    text-transform: capitalize;
+    text-align: left;
+    transition: color .5s;
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+    display: inline-flex;
+}
+.links a:hover,
+.links button:hover {
+    color: var(--accent);
 }
