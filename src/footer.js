@@ -42,10 +42,14 @@ export function initFooter() {
 
 
         <div class="quote">
-            <div>
-                Something to reflect on.
-                <button>random quote.</button>
-            </div>
+                <div>
+                    <p>Something to reflect on.</p>
+                    <button id="random-quote-btn">random quote.</button>
+                </div>
+                <div>
+                    <p id="quote"></p>
+                    <p id="author"></p>
+                </div>
         </div>
 
     </div>
@@ -69,5 +73,12 @@ export function initFooter() {
         } else if (scrollY >= (pageHeight - (windowH * 1.8))) {
             footer.style.filter = "blur(12px)";
         }
+    });
+    document.getElementById('random-quote-btn').addEventListener('click', async () => {
+        const res = await fetch(`https://random-quotes-api-five.vercel.app/api/quote?t=${Date.now()}`);
+        const data = await res.json();
+
+        document.getElementById('quote').textContent = `"${data.quote}"`;
+        document.getElementById('author').textContent = `— ${data.author}`;
     });
 }
