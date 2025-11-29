@@ -29,18 +29,6 @@ body,
     gap: 5vh;
     position: relative;
 }
-
-#footer .logo {
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 10vw;
-    line-height: 1;
-    color: var(--primary-white-10opacity);
-    letter-spacing: -4vw;
-    opacity: .1;
-    transform: translateY(2.8vh);
-}
-
 #footer span {
     margin-left: 2.5vw;
 }
@@ -54,17 +42,6 @@ body,
     padding: var(--horizontal-padding);
 
 }
-
-#footer .signature {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    line-height: 1;
-    opacity: .1;
-    animation: breathe 2s ease-in-out infinite;
-    font-size: .5em;
-}
-
 @keyframes breathe {
 
     0%,
@@ -88,35 +65,6 @@ body,
         text-shadow: 0 0 20px var(--primary-white);
     }
 }
-
-.quote {
-    position: absolute;
-    bottom: 13vh;
-    right: clamp(12px, 6vw, 100px);
-    line-height: 1;
-    opacity: .1;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    gap: 2vw;
-    animation: breathe 2s ease-in-out infinite;
-}
-
-.quote div {
-    display: flex;
-    gap: 1vw;
-    align-items: center;
-}
-
-.quote button {
-    padding: 5px;
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    border-radius: 6px;
-    font-weight: 900;
-}
-
 .links{
     width: 100%;
     height: 100%;
@@ -156,4 +104,66 @@ body,
 .links a:hover,
 .links button:hover {
     color: var(--accent);
+}
+#footer .footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: clamp(12px, 6vw, 100px);
+    height: 26vh
+}
+#footer .signature {
+    line-height: 1;
+    opacity: .1;
+    animation: breathe 2s ease-in-out infinite;
+    font-size: .5em;
+    align-self: flex-end;
+}
+#footer .logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 10vw;
+    line-height: .7;
+    color: var(--primary-white-10opacity);
+    letter-spacing: -4vw;
+    opacity: .1;
+}
+.quote {
+    line-height: 1;
+    opacity: .1;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    animation: breathe 2s ease-in-out infinite;
+    width: 20vw;
+}
+.quote div {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: space-between;
+}
+.quote button {
+    padding: 5px;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    border-radius: 6px;
+    font-weight: 900;
+}
+.quote-text{
+    display: flex;
+    flex-direction: column;
+    font-size: .5em;
+}
+#quote{
+    display: flex;
+    align-self: flex-start;
+}
+#author{
+    display: flex;
+    align-self: flex-end;
 }

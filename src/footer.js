@@ -7,12 +7,6 @@ export function initFooter() {
 
         <h1>Let's work togheter.</h1>
 
-        <div class="signature">
-            <p>Designed and Developed by Jakub Laska.</p>
-            <p>52º 10' 52.793" N 21º 1' 36.192" E.</p>
-            <p>Since 2025.</p>
-        </div>
-
         <div class="links">
 
             <div class="contact-links">
@@ -38,18 +32,23 @@ export function initFooter() {
             
         </div>
 
-        <p class="logo">jakub laska<span>.</span></p>
-
-
-        <div class="quote">
-                <div>
-                    <p>Something to reflect on.</p>
-                    <button id="random-quote-btn">random quote.</button>
-                </div>
-                <div>
-                    <p id="quote"></p>
-                    <p id="author"></p>
-                </div>
+        <div class="footer-bottom">
+            <div class="signature">
+                <p>Designed and Developed by Jakub Laska.</p>
+                <p>52º 10' 52.793" N 21º 1' 36.192" E.</p>
+                <p>Since 2025.</p>
+            </div>
+            <p class="logo">jakub laska<span>.</span></p>
+            <div class="quote">
+                    <div>
+                        <p>Something to reflect on.</p>
+                        <button id="random-quote-btn">random quote.</button>
+                    </div>
+                    <div class="quote-text">
+                        <p id="quote"></p>
+                        <p id="author"></p>
+                    </div>
+            </div>
         </div>
 
     </div>
