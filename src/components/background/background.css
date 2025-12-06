@@ -8,7 +8,6 @@
   position: fixed;
   width: clamp(128px, 20vw, 200px);
   height: clamp(128px, 20vw, 200px);
-  border-radius: 100%;
   pointer-events: none;
   filter: blur(clamp(16px, 4vw, 64px));
   z-index: -1;
@@ -75,7 +74,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("./assets/background/background-grain.png");
+  background-image: url("../../assets/background/background-grain.png");
   background-repeat: repeat;
   pointer-events: none;
   z-index: 0;

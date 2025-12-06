@@ -41,11 +41,11 @@
     font-family: var(--secondary-font);
     text-transform: uppercase;
     font-size: clamp(14px, 4vw, 48px);
-    border-right: 1px solid var(--primary-white-10opacity);
-    animation: blink 0.9s step-end infinite;
+    border-right: 2px solid var(--primary-white);
+    animation: blink 1.2s step-end infinite;
     cursor: pointer;
     transition: transform 0.7s ease, filter 0.7s ease, text-shadow 0.7s ease;
-    padding-right: 4px;
+    line-height: 1;
 }
 
 @keyframes blink {

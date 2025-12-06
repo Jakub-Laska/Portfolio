@@ -87,7 +87,7 @@ function animateLogo() {
         headerLogo.textContent = currentWord.slice(0, j++);
         if (j > currentWord.length) {
           deleting = true;
-          setTimeout(type, 1500); // pause before deleting
+          setTimeout(type, 2000); // pause before deleting
           return;
         }
       } else {
@@ -173,7 +173,6 @@ function hideHeader() {
     if (ticking || Date.now() - lastScrollTime < 16) return;
     lastScrollTime = Date.now();
     ticking = true;
-    console.log("header scroll");
     const currentScrollY = window.scrollY;
 
     requestAnimationFrame(() => {

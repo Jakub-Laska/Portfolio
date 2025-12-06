@@ -57,7 +57,6 @@ export function initHybridScroll() {
     if (ticking || Date.now() - lastScrollTime < 16) return;
     lastScrollTime = Date.now();
     ticking = true;
-    console.log('hs');
     const scrollStart = parent.offsetTop + window.innerHeight;
     const scrollEnd = scrollStart + parent.offsetHeight - window.innerHeight;
     const maxScroll = scrollEnd - scrollStart;
