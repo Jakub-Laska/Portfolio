@@ -2,9 +2,11 @@ import "./background.css";
 export function initBackground() {
   const background = document.getElementById("background");
   background.innerHTML = `
-    <div class="background-gradient left"></div>
-    <div class="background-gradient bot"></div>
-    <div class="background-gradient right"></div>
+    <div class="gradientContainer">
+      <div class="background-gradient left"></div>
+      <div class="background-gradient bot"></div>
+      <div class="background-gradient right"></div>
+    </div>
     <div class="background-grain"></div>
   `;
   const gradients = document.querySelectorAll(".background-gradient");
@@ -15,26 +17,26 @@ export function initBackground() {
   window.addEventListener(
     "scroll",
     () => {
-      if (ticking || Date.now() - lastScrollTime < 400) return;
+      if (ticking || Date.now() - lastScrollTime < 500) return;
       lastScrollTime = Date.now();
         ticking = true;
-      const scrollY = window.scrollY;
-      console.log("bg");
 
         requestAnimationFrame(() => {
-          gradients.forEach((element, i) => {
-            const brightness = 1 + Math.sin(scrollY * 0.02 + i) * 0.1;
-            const saturate = 1 + Math.sin(scrollY * 0.016 + i) * 0.4;
-
-            element.style.filter = `
-      brightness(${brightness})
-      saturate(${saturate})
-      blur(clamp(16px, 4vw, 64px))
-    `;
+          gradients.forEach((element) => {
+            element.style.background = randomRGBA();
           });
           ticking = false;
         });
     },
     { passive: true }
   );
+
+}
+
+function randomRGBA() {
+  const r = Math.floor(Math.random() * 100);
+  const g = Math.floor(Math.random() * 150);
+  const b = Math.floor(Math.random() * 256);
+  const a = (Math.random() * 0.5 + 0.5).toFixed(2);
+  return `rgba(${r},${g},${b},${a})`;
 }

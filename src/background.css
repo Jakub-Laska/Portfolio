@@ -12,30 +12,49 @@
   pointer-events: none;
   filter: blur(clamp(16px, 4vw, 64px));
   z-index: -1;
-  transition: transform 1s ease;
+  transition: transform 2s ease, background 5s ease;
 }
 
 .background-gradient.left {
   transform: translate(var(--leftx), var(--lefty)) scale(2);
-  rotate: 0deg;
-  background: radial-gradient(circle at center, var(--primary-white), var(--primary-darkBlue), var(--primary-darkBlue));
+  background: var(--primary-darkBlue);
   animation-delay: 0s;
-  animation: floatLeft 2.5s ease-in-out infinite;
-  transition: transform 0.8s ease;
 }
 .background-gradient.right {
   transform: translate(var(--rightx), var(--righty)) scale(2);
-  rotate: 0deg;
-  background: radial-gradient(circle at center, var(--primary-white), var(--primary-blue), var(--primary-blue));
+  background: var(--primary-blue);
   animation-delay: 0s;
-  animation: floatRight 2.5s ease-in-out infinite;
 }
 .background-gradient.bot {
   transform: translate(var(--botx), var(--boty)) scale(2);
-  rotate: 0deg;
-  background: radial-gradient(circle at center, var(--primary-white), var(--accent), var(--accent));
+  background: var(--accent);
   animation-delay: 1s;
-  animation: floatBot 2.5s ease-in-out infinite;
+}
+.gradientContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  animation: wiggle 2s infinite alternate ease-in-out, rotateOnLoad 5s;
+}
+@keyframes rotateOnLoad {
+  0% {
+    transform: rotate(180deg) scale(2);
+    opacity: 0.01;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}   
+@keyframes wiggle {
+    0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  100% {
+    transform: translate(10px, 10px) scale(1.01);
+  }
 }
 
 .container {
@@ -51,7 +70,7 @@
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('./assets/background/background-grain.png');
+  background-image: url("./assets/background/background-grain.png");
   background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
