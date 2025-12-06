@@ -2,10 +2,12 @@ import "./background.css";
 export function initBackground() {
   const background = document.getElementById("background");
   background.innerHTML = `
-    <div class="gradientContainer">
-      <div class="background-gradient left"></div>
-      <div class="background-gradient bot"></div>
-      <div class="background-gradient right"></div>
+    <div class="gradientContainerWiggle">
+      <div class="gradientContainer">
+        <div class="background-gradient left"></div>
+        <div class="background-gradient bot"></div>
+        <div class="background-gradient right"></div>
+      </div>
     </div>
     <div class="background-grain"></div>
   `;
@@ -17,7 +19,7 @@ export function initBackground() {
   window.addEventListener(
     "scroll",
     () => {
-      if (ticking || Date.now() - lastScrollTime < 500) return;
+      if (ticking || Date.now() - lastScrollTime < 5000) return;
       lastScrollTime = Date.now();
         ticking = true;
 
