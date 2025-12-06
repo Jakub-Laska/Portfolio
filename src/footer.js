@@ -53,12 +53,19 @@ export function initFooter() {
 
     </div>
     `;
+    let ticking = false;
+    let lastScrollTime = 0;
     window.addEventListener('scroll', () => {
+        if (ticking || Date.now() - lastScrollTime < 16) return;
+        lastScrollTime = Date.now();
+        ticking = true;
+        console.log("footer scroll");
         const footer = document.getElementById('footer');
         const scrollY = window.scrollY;
         const pageHeight = document.documentElement.scrollHeight;
         const windowH = window.innerHeight;
-
+        
+        requestAnimationFrame(() => {
         if (scrollY >= (pageHeight - (windowH * 1.3))) {
             footer.style.filter = "blur(0px)";
         } else if (scrollY >= (pageHeight - (windowH * 1.4))) {
@@ -69,10 +76,13 @@ export function initFooter() {
             footer.style.filter = "blur(8px)";
         } else if (scrollY >= (pageHeight - (windowH * 1.7))) {
             footer.style.filter = "blur(10px)";
-        } else if (scrollY >= (pageHeight - (windowH * 1.8))) {
+        } else if (scrollY >= (pageHeight - (windowH * 2))) {
             footer.style.filter = "blur(12px)";
         }
-    });
+        ticking = false;
+        });
+    }, { passive: true });
+
     document.getElementById('random-quote-btn').addEventListener('click', async () => {
         const res = await fetch(`https://random-quotes-api-five.vercel.app/api/quote?t=${Date.now()}`);
         const data = await res.json();

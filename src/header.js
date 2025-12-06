@@ -166,15 +166,24 @@ function darkmode() {
 function hideHeader() {
   let lastScrollY = window.scrollY;
 
+  let lastScrollTime = 0;
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
+    if (ticking || Date.now() - lastScrollTime < 16) return;
+    lastScrollTime = Date.now();
+    ticking = true;
+    console.log("header scroll");
     const currentScrollY = window.scrollY;
 
+    requestAnimationFrame(() => {
     if (currentScrollY > lastScrollY + 10) {
       header.style.top = '-200px';
     } else if (currentScrollY < lastScrollY - 10) {
       header.style.top = '0px';
     }
-
     lastScrollY = currentScrollY;
-  });
+    ticking = false;
+    });
+  }, { passive: true });
 }

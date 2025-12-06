@@ -1,114 +1,41 @@
 .background-gradient {
+  --leftx: -10vw;
+  --lefty: 40vh;
+  --rightx: 100vw;
+  --righty: 0vh;
+  --botx: 60vw;
+  --boty: 100vh;
   position: fixed;
   width: clamp(128px, 20vw, 200px);
   height: clamp(128px, 20vw, 200px);
   border-radius: 100%;
   pointer-events: none;
-  animation: float 2.5s ease-in-out infinite;
-  transition: all 2s ease;
   filter: blur(clamp(16px, 4vw, 64px));
   z-index: -1;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0) scale(2)
-  }
-
-  50% {
-    transform: translate(8px, 8px) scale(1.9)
-  }
-
-  100% {
-    transform: translate(0, 0) scale(2)
-  }
+  transition: transform 1s ease;
 }
 
 .background-gradient.left {
-  bottom: 40%;
-  left: -10%;
+  transform: translate(var(--leftx), var(--lefty)) scale(2);
   rotate: 0deg;
   background: radial-gradient(circle at center, var(--primary-white), var(--primary-darkBlue), var(--primary-darkBlue));
   animation-delay: 0s;
+  animation: floatLeft 2.5s ease-in-out infinite;
+  transition: transform 0.8s ease;
 }
-
-.background-gradient.bot {
-  bottom: -30%;
-  left: 50%;
-  rotate: 0deg;
-  background: radial-gradient(circle at center, var(--primary-white), var(--accent), var(--accent));
-  animation-delay: 1s;
-}
-
 .background-gradient.right {
-  bottom: 90%;
-  left: 100%;
+  transform: translate(var(--rightx), var(--righty)) scale(2);
   rotate: 0deg;
   background: radial-gradient(circle at center, var(--primary-white), var(--primary-blue), var(--primary-blue));
   animation-delay: 0s;
+  animation: floatRight 2.5s ease-in-out infinite;
 }
-
-.background-gradient.bot.horizontal {
-  bottom: 40%;
-  left: -10%;
-  rotate: 180deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.left.horizontal {
-  bottom: 90%;
-  left: 100%;
-  rotate: 180deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.right.horizontal {
-  bottom: -30%;
-  left: 50%;
-  rotate: 180deg;
+.background-gradient.bot {
+  transform: translate(var(--botx), var(--boty)) scale(2);
+  rotate: 0deg;
+  background: radial-gradient(circle at center, var(--primary-white), var(--accent), var(--accent));
   animation-delay: 1s;
-}
-
-.background-gradient.left.vertical {
-  bottom: -30%;
-  left: 50%;
-  rotate: 360deg;
-  animation-delay: 1s;
-}
-
-.background-gradient.bot.vertical {
-  bottom: 90%;
-  left: 100%;
-  rotate: 360deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.right.vertical {
-  bottom: 40%;
-  left: -10%;
-  rotate: 360deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.left.footer {
-  bottom: 70%;
-  left: 50%;
-  rotate: 360deg;
-  animation-delay: 0s;
-}
-
-.background-gradient.bot.footer {
-  bottom: 70%;
-  left: 90%;
-  rotate: 360deg;
-  animation-delay: 1s;
-}
-
-.background-gradient.right.footer {
-  bottom: 70%;
-  left: 10%;
-  rotate: 360deg;
-  animation-delay: 0s;
+  animation: floatBot 2.5s ease-in-out infinite;
 }
 
 .container {
@@ -120,7 +47,6 @@
   background-color: black;
   z-index: 1;
 }
-
 .container::before {
   content: "";
   position: fixed;
