@@ -1,5 +1,5 @@
-import './mainWelcome.css';
+import './welcome.css';
 
-export function initMainWelcome() {
+export function initWelcome() {
     const mainWelcome = document.getElementById('mainWelcome');
 }

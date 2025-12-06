@@ -1,8 +1,9 @@
 import "./header.css";
+import headerHtml from "./header.html?raw";
 const header = document.getElementById("header");
 
 export function initHeader() {
-  renderHeader();
+  header.innerHTML = headerHtml;
   scrollUp();
   animateLogo();
   highlight();
@@ -10,35 +11,9 @@ export function initHeader() {
   darkmode();
   hideHeader();
 }
-// Render header
-function renderHeader() {
-  header.innerHTML = `
-    <div class="headerContainer">
-      <div class="header-logo"></div>
-    </div>
-
-    <div class="buttonContainer">
-
-      <button class="skipBtn">skip to main content.</button>
-      <div id="media">
-      <a href="https://github.com/Jakub-Laska" target="_blank">
-      <img src="src/assets/header/github.png" alt="github icon" class="mediaIcon"></a>
-      <a href="https://www.linkedin.com/in/jakub-laska-b24639324/" target="_blank">
-      <img src="src/assets/header/linkedin.png" alt="linkedin icon" class="mediaIcon"></a>
-      <a href="mailto:jakub.laska1911@gmail.com">
-      <img src="src/assets/header/gmail.png" alt="gmail icon" class="mediaIcon"></a>
-      </div>
-      <a class="downloadBtn" href="https://jakub-laska.github.io/Resume/" target="_blank">download my cv.</a>
-            <div class="darkmodeContainer">
-      <button class="darkmodeBtn">dark</button>
-      </div>
-    </div>
-
-    `;
-}
 // on click scroll to the top
 function scrollUp() {
-  const sticky = document.querySelector('.sticky');
+  const sticky = document.querySelector(".sticky");
   const scrollStart = sticky.offsetTop + window.innerHeight;
   const scrollEnd = scrollStart + sticky.offsetHeight - window.innerHeight;
   const headerLogo = document.querySelector(".header-logo");
@@ -136,7 +111,7 @@ let burger, buttonContainer;
 function initBurgerMenu() {
   burger = document.createElement("div");
   buttonContainer = document.querySelector(".buttonContainer");
-  const headerContainer = document.querySelector('.headerContainer');
+  const headerContainer = document.querySelector(".headerContainer");
 
   burger.classList.add("burger");
   burger.appendChild(document.createElement("span"));
@@ -151,14 +126,18 @@ function initBurgerMenu() {
 }
 // darkmode
 function darkmode() {
-  const darkBtn = document.querySelector('.darkmodeBtn');
-  const darkBtnContainer = document.querySelector('.darkmodeContainer');
+  const darkBtn = document.querySelector(".darkmodeBtn");
+  const darkBtnContainer = document.querySelector(".darkmodeContainer");
   let dark = true;
   darkBtn.innerHTML = "dark";
-  darkBtnContainer.addEventListener('click', () => {
-    darkBtn.classList.toggle('active');
-    document.body.classList.toggle('dark'); // your dark mode toggle
-    if (dark) { darkBtn.innerHTML = "light" } else { darkBtn.innerHTML = "dark" };
+  darkBtnContainer.addEventListener("click", () => {
+    darkBtn.classList.toggle("active");
+    document.body.classList.toggle("dark"); // your dark mode toggle
+    if (dark) {
+      darkBtn.innerHTML = "light";
+    } else {
+      darkBtn.innerHTML = "dark";
+    }
     dark = !dark;
   });
 }
@@ -169,20 +148,24 @@ function hideHeader() {
   let lastScrollTime = 0;
   let ticking = false;
 
-  window.addEventListener('scroll', () => {
-    if (ticking || Date.now() - lastScrollTime < 16) return;
-    lastScrollTime = Date.now();
-    ticking = true;
-    const currentScrollY = window.scrollY;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking || Date.now() - lastScrollTime < 16) return;
+      lastScrollTime = Date.now();
+      ticking = true;
+      const currentScrollY = window.scrollY;
 
-    requestAnimationFrame(() => {
-    if (currentScrollY > lastScrollY + 10) {
-      header.style.top = '-200px';
-    } else if (currentScrollY < lastScrollY - 10) {
-      header.style.top = '0px';
-    }
-    lastScrollY = currentScrollY;
-    ticking = false;
-    });
-  }, { passive: true });
+      requestAnimationFrame(() => {
+        if (currentScrollY > lastScrollY + 10) {
+          header.style.top = "-200px";
+        } else if (currentScrollY < lastScrollY - 10) {
+          header.style.top = "0px";
+        }
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
 }

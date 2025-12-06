@@ -1,11 +1,11 @@
 import './variables.css';
 
-import { initSplashScreen } from './splashScreen.js';
+import { initSplashScreen } from './components/splashScreen/splashScreen.js';
 import { initBackground } from './components/background/background.js';
-import { initHeader } from './header.js';
-import { initWelcomePage } from './welcomePage.js';
-import { initMain } from './main.js';
-import { initHybridScroll } from './hybridScroll.js';
+import { initHeader } from './components/header/header.js';
+import { initWelcomePage } from './components/welcomePage/welcomePage.js';
+import { initMain } from './components/main/main.js';
+import { initHybridScroll } from './components/hybridScroll/hybridScroll.js';
 import { initFooter } from './components/footer/footer.js';
 
 function initAll(){
