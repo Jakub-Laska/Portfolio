@@ -67,7 +67,7 @@
   -webkit-mask-image: linear-gradient(black, black);
   mask-image: linear-gradient(black, black);
   mask-composite: intersect;
-  border-bottom-right-radius: 2vw;
+  border-bottom-right-radius: 64px;
   background-color: black;
   z-index: 1;
 }

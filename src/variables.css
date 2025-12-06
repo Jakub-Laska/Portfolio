@@ -21,6 +21,7 @@
 
     --primary-darkBlue: #4D6CFA;
     --primary-darkBlue-50opacity: rgba(77, 109, 250, 0.5);
+    --primary-darkBlue-25opacity: rgba(77, 109, 250, 0.25);
 
     --accent: #eaba6b;
     --accent-50opacity: rgba(234, 185, 107, 0.5);

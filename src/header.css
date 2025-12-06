@@ -15,14 +15,15 @@
     position: fixed;
     top: -200px;
     width: 100%;
-    background-color: var(--primary-black-90opacity);
+    background: var(--primary-black);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-image: url('./assets/background/background-grain.png');
     z-index: 2;
     transition: .3s ease;
+    border-bottom-right-radius: 64px;
+    overflow: hidden;
 }
 
 .headerContainer {
@@ -62,7 +63,6 @@
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
 .burger span {
     display: block;
     height: 4px;
@@ -70,31 +70,24 @@
     transition: all 0.3s ease;
     transform-origin: center;
 }
-
 .burger:hover span:nth-child(1) {
     transform: translateY(-4px);
 }
-
 .burger:hover span:nth-child(3) {
     transform: translateY(4px);
 }
-
 .burger.active span:nth-child(1) {
     transform: rotate(90deg) translate(10px, 0);
 }
-
 .burger.active span:nth-child(2) {
     opacity: 0;
 }
-
 .burger.active span:nth-child(3) {
     transform: rotate(-180deg) translate(0, 10px);
 }
-
 .burger.active {
     transform: rotate(45deg);
 }
-
 .header-logo:hover,
 .burger:hover,
 .buttonContainer button:hover,
@@ -111,7 +104,7 @@
     align-items: center;
     width: 100%;
     padding: 6px clamp(12px, 6vw, 100px);
-    background-color: var(--primary-black-90opacity);
+    background: var(--primary-darkBlue-25opacity);
     border-top: 1px solid var(--primary-white-10opacity);
 }
 
