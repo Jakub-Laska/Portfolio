@@ -12,6 +12,7 @@
   filter: blur(clamp(16px, 4vw, 64px));
   z-index: -1;
   transition: transform 2s ease-in-out, background 5s ease-in-out;
+  border-radius: 50%;
 }
 
 .background-gradient.left {

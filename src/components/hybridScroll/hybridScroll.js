@@ -40,7 +40,7 @@ export function initHybridScroll() {
         gradients.forEach(element => {
                 updateGradientPositions(element, 0)
         });
-      } else if (window.scrollY >= (document.body.offsetHeight - (window.innerHeight * 1.2))) {
+      } else if (window.scrollY >= (document.body.offsetHeight - (window.innerHeight * 1.3))) {
         gradients.forEach(element => {
       updateGradientPositions(element, 3)
         });
