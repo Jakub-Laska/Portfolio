@@ -33,5 +33,6 @@ function randomRGBA() {
   const g = Math.floor(Math.random() * 150);
   const b = Math.floor(Math.random() * 256);
   const a = (Math.random() * 0.5 + 0.5).toFixed(2);
+  document.documentElement.style.setProperty('--random-color', `rgba(${r},${g},${b},${a * 0.5})`);
   return `rgba(${r},${g},${b},${a})`;
 }

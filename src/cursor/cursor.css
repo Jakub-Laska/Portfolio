@@ -1,0 +1,63 @@
+body {
+  cursor: default;
+}
+
+.cursor {
+  --cursorX: 0px;
+  --cursorY: 0px;
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-white, #fff);
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(var(--cursorX), var(--cursorY)) translate(-50%, -50%);
+  will-change: transform opacity filter clip-path;
+  opacity: 0;
+}
+
+.clicked {
+  animation: Glitch 0.4s ease;
+}
+
+@keyframes Glitch {
+  0%, 100% {
+    clip-path: inset(0);
+    filter: drop-shadow(0 0 0 transparent) drop-shadow(0 0 0 transparent)
+      drop-shadow(0 0 0 transparent);
+  }
+
+  20% {
+    clip-path: inset(0 0 70% 0);
+    filter: drop-shadow(2px 0 0 #ff0048) drop-shadow(-1px 0 0 #00ffea)
+      drop-shadow(0 2px 0 #ffe600);
+  }
+
+  40% {
+    clip-path: inset(70% 0 0 0);
+    filter: drop-shadow(-2px 0 0 #ff0048) drop-shadow(2px 0 0 #00ffea)
+      drop-shadow(0 -1px 0 #ffe600);
+  }
+
+  60% {
+    clip-path: inset(0 70% 0 0);
+    filter: drop-shadow(1px 1px 0 #ff0048) drop-shadow(-2px -1px 0 #00ffea)
+      drop-shadow(1px -2px 0 #ffe600);
+  }
+
+  80% {
+    clip-path: inset(30% 20% 40% 10%);
+    filter: drop-shadow(3px 1px 0 #ff0048) drop-shadow(-3px -1px 0 #00ffea)
+      drop-shadow(1px 3px 0 #ffe600);
+  }
+}
+.visible {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.fade {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}

@@ -27,6 +27,8 @@
     --accent-50opacity: rgba(234, 185, 107, 0.5);
     --accent-10opacity: rgba(234, 185, 107, 0.1);
 
+    --random-color: #DADFF7;
+
     /* fonts */
     --primary-font: "Montserrat", sans-serif;
     --secondary-font: "Bebas Neue", sans-serif;
