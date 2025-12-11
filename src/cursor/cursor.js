@@ -23,7 +23,7 @@ export function initCursor() {
   if (!cursor) return;
   enableCursorOnDesktop();
   window.addEventListener("resize", enableCursorOnDesktop);
-  initCursorFade()
+  initCursorFade();
 }
 
 function enableCursorOnDesktop() {
@@ -70,11 +70,12 @@ function followCursor() {
 }
 
 function initClickEffect() {
+  cursor.classList.add("glitch");
   document.addEventListener("click", () => {
     if (Date.now() - lastClick < 16) return;
     lastClick = Date.now();
     cursor.classList.remove("clicked");
-
+    getRandomGlitchValues();
     void cursor.offsetWidth;
 
     cursor.classList.add("clicked");
@@ -82,7 +83,7 @@ function initClickEffect() {
 }
 
 function initCursorFade() {
-    if (isMobile) return;
+  if (isMobile) return;
   const targets = document.querySelectorAll("a, button, [data-cursor]");
 
   targets.forEach((el) => {
@@ -94,4 +95,28 @@ function initCursorFade() {
       cursor.classList.remove("fade");
     });
   });
+  document.addEventListener("mouseenter", () => {
+    cursor.classList.remove("fade");
+  });
+  document.addEventListener("mouseleave", () => {
+    cursor.classList.add("fade");
+  });
+}
+
+function getRandomGlitchValues() {
+  const glitchEl = document.querySelector(".glitch");
+  glitchEl.style.setProperty("--top", Math.floor(Math.random() * 60) + "%");
+  glitchEl.style.setProperty("--right", Math.floor(Math.random() * 60) + "%");
+  glitchEl.style.setProperty("--bottom", Math.floor(Math.random() * 60) + "%");
+  glitchEl.style.setProperty("--left", Math.floor(Math.random() * 60) + "%");
+
+  const seed1 = Math.random();
+  const seed2 = Math.random();
+  const seed3 = Math.random();
+  const seed4 = Math.random();
+
+  glitchEl.style.setProperty("--rand1", seed1);
+  glitchEl.style.setProperty("--rand2", seed2);
+  glitchEl.style.setProperty("--rand3", seed3);
+  glitchEl.style.setProperty("--rand4", seed4);
 }
