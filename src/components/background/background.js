@@ -1,10 +1,12 @@
 import "./background.css";
 import backgroundHTML from "./background.html?raw";
+import { state } from "../../hybridScroll/hybridScroll";
 
 export function initBackground() {
   document.querySelector("#background").innerHTML = backgroundHTML;
   initScrollListener();
   initRandomFlash();
+  initScrollShift();
 }
 
 function initScrollListener() {
@@ -57,4 +59,59 @@ function randomRGBA() {
     `rgba(${r},${g},${b},${a * 0.5})`
   );
   return `rgba(${r},${g},${b},${a})`;
+}
+
+function initScrollShift() {
+  let lastScrollY = window.scrollY;
+  const elements = document.querySelectorAll(".shift");
+  let lastScrollDirection = null;
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const delta = window.scrollY - lastScrollY;
+          let currentDirection = delta > 0 ? 1 : 0;
+
+          if (!state.isHorizontal) {
+            elements.forEach((el) => {
+              el.style.setProperty("--x", 0);
+            });
+          } else {
+            elements.forEach((el) => {
+              el.style.setProperty("--y", 0);
+            });
+          }
+
+          if (currentDirection !== lastScrollDirection) {
+            if (!state.isHorizontal) {
+              elements.forEach((el) => {
+                const y = 64;
+                el.style.setProperty(
+                  "--y",
+                  currentDirection ? -y + "px" : y + "px"
+                );
+              });
+            } else {
+              elements.forEach((el) => {
+                const x = 64;
+                el.style.setProperty(
+                  "--x",
+                  currentDirection ? -x + "px" : x + "px"
+                );
+              });
+            }
+            lastScrollDirection = currentDirection;
+          }
+
+          lastScrollY = window.scrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
 }
