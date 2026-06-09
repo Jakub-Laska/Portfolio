@@ -1,6 +1,7 @@
 import './aboutMe.css';
+import aboutMeHtml from "./aboutMe.html?raw";
 
 export function initAboutMe() {
-    const aboutMe = document.getElementById('aboutMe');
+  document.querySelector("#aboutMe").innerHTML = aboutMeHtml;
 
     }

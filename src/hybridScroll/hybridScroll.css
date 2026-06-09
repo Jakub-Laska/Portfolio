@@ -1,93 +1,160 @@
 .project {
-    border: solid 1px red;
-    height: 98vh;
-    width: 100vw;
-    flex-shrink: 0;
+  height: 90vh;
+  max-width: 75vw;
+  flex-shrink: 0;
+  border-radius: 64px;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  /* padding: 5vw; */
+  /* opacity: 0.6;
+  box-shadow: inset 0 0 5vw rgb(0, 0, 0); */
+  position: relative;
 }
-
+/* .project:hover {
+  opacity: 1;
+} */
 .buffer {
-    height: 98vh;
-    width: 25vw;
-    flex-shrink: 0;
-    background-color: rgba(137, 43, 226, 0.1);
-    
+  height: 98vh;
+  width: 25vw;
+  flex-shrink: 0;
 }
-
 .sticky_parent {
-    height: 800vh;
-}
+  height: 800vh;
 
+}
 .sticky {
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 100vh;
-}
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
 
+}
 .scroll_section {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    will-change: transform;
-    transition: transform 0.2s ease-out;
-}
+  display: flex;
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+  gap: 10vw;
 
+}
 body::-webkit-scrollbar {
-    width: 3px;
+  width: 3px;
 }
-
 body::-webkit-scrollbar-track {
-    background: var(--primary-dark-50opacity);
+  background: var(--primary-dark-50opacity);
 }
-
 body::-webkit-scrollbar-thumb {
-    background: var(--primary-white-50opacity);
-
+  background: var(--primary-white-50opacity);
 }
-
 body::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+  background: var(--accent);
 }
-
 .fake-scrollbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: var(--primary-dark-50opacity);
-    border-radius: 3px;
-    opacity: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary-dark-50opacity);
+  border-radius: 3px;
+  opacity: 0;
 }
-
 .fake-scrollbar .bar {
-    height: 100%;
-    background: var(--primary-white-50opacity);
-    border-radius: 3px;
-    transition: none;
+  height: 100%;
+  background: var(--primary-white-50opacity);
+  border-radius: 3px;
+  transition: none;
 }
-
 .bar:hover {
-    background: var(--accent);
+  background: var(--accent);
 }
-
 .bar:active {
-    background: var(--accent);
+  background: var(--accent);
 }
-
 .show-scrollbar .fake-scrollbar {
-    opacity: 1;
+  opacity: 1;
 }
-
 .hide-scrollbar::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
-
 .fake-scrollbar {
-    cursor: pointer;
+  cursor: pointer;
+}
+.fake-scrollbar:active {
+  cursor: grabbing;
 }
 
-.fake-scrollbar:active {
-    cursor: grabbing;
+.firstProject {
+  background: url(../assets/projectPreview/fishscalePreview.png);
+}
+.secondProject {
+  background: url(../assets/projectPreview/colorSwapperPreview.png);
+}
+.thirdProject {
+  background: url(../assets/projectPreview/etchasketchPreview.png);
+}
+.fourthProject {
+  background: url(../assets/projectPreview/rockPaperScissorsPreview.png);
+}
+.fifthProject {
+  background: url(../assets/projectPreview/tictactoePreview.png);
+}
 
+.firstProject,
+.secondProject,
+.thirdProject,
+.fourthProject,
+.fifthProject {
+  width: 100%;
+  height: 100%;
+  border-radius: 64px;
+  position: relative;
+  box-shadow: inset 0 0 5vw rgb(0, 0, 0);
+  transition: filter 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  filter: brightness(0.2);
+  opacity: 0.5;
+  background-size: cover;
+}
+.firstProject:hover,
+.secondProject:hover,
+.thirdProject:hover,
+.fourthProject:hover,
+.fifthProject:hover {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.description {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.project a{
+    outline: none;
+}
+.descriptionTitle {
+  font-family: var(--secondary-font);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--primary-white);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+}
+.descriptionContent {
+  font-family: var(--primary-font);
+  font-size: clamp(14px, 1.5vw, 20px);
+  color: var(--primary-white);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
 }

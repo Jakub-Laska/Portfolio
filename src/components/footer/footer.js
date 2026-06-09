@@ -5,6 +5,9 @@ export function initFooter() {
   document.getElementById("footer").innerHTML = footerHtml;
   initScrollListener();
   initRandomQuote();
+document.addEventListener("DOMContentLoaded", initDoNotClickButton);
+
+
 }
 
 function initScrollListener() {
@@ -59,3 +62,24 @@ function initRandomQuote() {
       document.getElementById("author").textContent = `— ${data.author}`;
     });
 }
+
+function initDoNotClickButton() {
+  const footer = document.querySelector(".footer-container");       
+  const button = footer.querySelector(".doNotClick");    
+
+  button.addEventListener("mouseenter", () => {
+    // wymiary footera
+    const footerRect = footer.getBoundingClientRect();
+    
+    // losowe położenie w obrębie footera
+    const x = Math.random() * (footerRect.width - button.offsetWidth);
+    const y = Math.random() * (footerRect.height - button.offsetHeight);
+    
+    button.style.position = "absolute";
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+  });
+}
+
+
+

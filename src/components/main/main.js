@@ -6,13 +6,14 @@ import { initMusic } from './music/music.js';
 import { initSpline } from './spline/spline.js';
 import { initTechStack } from './techStack/techStack.js';
 import { initOccupation } from './occupation/occupation.js';
-
+import { initProjects } from './projects/projects.js';
 
 export function initMain() {
-    // initWelcome();
-    // initAboutMe();
-    // initSpline();
-    // initTechStack();
-    // initMusic();
-    // initOccupation();
+    initWelcome();
+    initAboutMe();
+    initProjects();
+    initSpline();
+    initTechStack();
+    initMusic();
+    initOccupation();
 }

@@ -109,7 +109,6 @@
   align-items: center;
   width: 100%;
   padding: 6px clamp(12px, 6vw, 100px);
-  background: var(--primary-black);
   border-top: 1px solid var(--primary-white-10opacity);
 }
 
@@ -120,7 +119,7 @@
 
 .buttonContainer .skipBtn,
 .buttonContainer .downloadBtn,
-.buttonContainer .darkmodeBtn {
+.buttonContainer .headerThemeToggle {
   text-transform: uppercase;
   color: var(--primary-white);
   text-align: center;
@@ -155,15 +154,15 @@
   justify-content: center;
 }
 
-.darkmodeBtn {
+.headerThemeToggle {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.darkmodeBtn::before,
-.darkmodeBtn::after {
+.headerThemeToggle::before,
+.headerThemeToggle::after {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -171,7 +170,7 @@
   transition: all 0.3s ease;
 }
 
-.darkmodeBtn::after {
+.headerThemeToggle::after {
   width: 3em;
   height: 1em;
   border-radius: 12px;
@@ -179,19 +178,19 @@
   margin-left: 0.5em;
 }
 
-.darkmodeBtn::before {
+.headerThemeToggle::before {
   width: 0.7em;
   height: 0.7em;
   position: absolute;
   right: 0.1em;
 }
 
-.darkmodeBtn.active::before {
+.headerThemeToggle.active::before {
   right: 2.1em;
   background-color: var(--accent);
 }
 
-.darkmodeBtn.active::after {
+.headerThemeToggle.active::after {
   background-color: var(--accent);
   opacity: 0.5;
 }
@@ -230,7 +229,7 @@
     cursor: pointer;
   }
 
-  .buttonContainer .darkmodeBtn {
+  .buttonContainer .headerThemeToggle {
     pointer-events: none;
   }
 

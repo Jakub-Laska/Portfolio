@@ -8,15 +8,18 @@ import { initMain } from "./components/main/main.js";
 import { initHybridScroll } from "./hybridScroll/hybridScroll.js";
 import { initFooter } from "./components/footer/footer.js";
 import { initCursor } from "./cursor/cursor.js";
+import { themeToggle } from "./theme.js";
+
 
 function initAll() {
   initSplashScreen();
   initBackground();
-  // initWelcomePage();
+  initWelcomePage();
   initMain();
   initHybridScroll();
   initFooter();
   initHeader();
   initCursor();
+themeToggle();
 }
 initAll();

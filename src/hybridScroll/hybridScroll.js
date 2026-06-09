@@ -10,6 +10,7 @@ export function initHybridScroll() {
   const header = document.getElementById("header");
   const scrollbar = document.querySelector(".fake-scrollbar .bar");
   const fakeScrollbar = document.querySelector(".fake-scrollbar");
+  const mainContainer = document.querySelector("#mainContainer");
 
   let scrollProgress = 0;
 
@@ -22,7 +23,7 @@ export function initHybridScroll() {
       scrollProgress = (window.scrollY - scrollStart) / maxScroll;
       document.body.classList.add("show-scrollbar");
       document.body.classList.add("hide-scrollbar");
-
+      mainContainer.style.padding = "0";
       scrollbar.style.width = `${scrollProgress * 100}%`;
 
       const maxScrollX = scrollSection.scrollWidth - window.innerWidth;
@@ -38,6 +39,7 @@ export function initHybridScroll() {
       header.style.opacity = "1";
       document.body.classList.remove("show-scrollbar", "hide-scrollbar");
           state.isHorizontal = false;
+      mainContainer.style.padding = "var(--horizontal-padding)";
 
       if (window.scrollY <= scrollStart) {
         gradients.forEach((element) => {
@@ -120,7 +122,29 @@ export function initHybridScroll() {
       document.body.style.cursor = "";
     }
   });
+
+initDescriptionHover()
 }
+
+function initDescriptionHover() {
+
+  const projects = document.querySelectorAll(".project");
+
+  projects.forEach((project) => {
+
+    const description = project.querySelector(".description");
+
+    project.addEventListener("mouseenter", () => {
+      description.style.opacity = "0";
+    });
+
+    project.addEventListener("mouseleave", () => {
+      description.style.opacity = "1";
+    });
+
+  });
+}
+
 
 const positionsArray = [
   {

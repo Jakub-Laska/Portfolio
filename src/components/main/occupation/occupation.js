@@ -1,5 +1,10 @@
 import "./occupation.css";
+import occupationHtml from "./occupation.html?raw";
 
 export function initOccupation() {
-  const occupationSection = document.getElementById('occupation');
+  document.querySelector("#occupation").innerHTML = occupationHtml;
+
 }
+
+
+

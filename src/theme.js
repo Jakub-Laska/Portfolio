@@ -1,17 +1,31 @@
-export function setThemeColor(color) {
-  const metaTheme = document.getElementById("theme-color");
-  if (metaTheme) {
-    metaTheme.setAttribute("content", color);
-  }
+export function themeToggle() {
+  themeToggleSetup();
 }
 
-const toggleThemeBtn = document.getElementById("toggle-theme");
+function themeToggleSetup() {
+  const toggleThemeBtn = document.querySelectorAll(".toggleTheme");
+      let isDark = true;
+  const darkBtn = document.querySelector(".headerThemeToggle");
 
-toggleThemeBtn.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark");
+  toggleThemeBtn.forEach((btn) => {
+btn.addEventListener("click", () => {
+  isDark = !isDark;
+  darkBtn.classList.toggle("active");
+
   if (isDark) {
-    setThemeColor("#181819"); // dark mode
+    document.documentElement.style.setProperty("--black-black", "#000000");
+    document.documentElement.style.setProperty("--primary-white", "#DADFF7");
+    document.documentElement.style.setProperty("--primary-black", "#181819");
+      darkBtn.innerHTML = "dark";
+
   } else {
-    setThemeColor("#DADFF7"); // light mode
+    document.documentElement.style.setProperty("--black-black", "#dadff780");
+    document.documentElement.style.setProperty("--primary-white", "#000000");
+    document.documentElement.style.setProperty("--primary-black", "#DADFF7");
+      darkBtn.innerHTML = "light";
+
   }
 });
+
+  });
+}

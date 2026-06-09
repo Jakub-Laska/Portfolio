@@ -126,13 +126,12 @@ function initBurgerMenu() {
 }
 // darkmode
 function darkmode() {
-  const darkBtn = document.querySelector(".darkmodeBtn");
+  const darkBtn = document.querySelector(".headerThemeToggle");
   const darkBtnContainer = document.querySelector(".darkmodeContainer");
   let dark = true;
   darkBtn.innerHTML = "dark";
   darkBtnContainer.addEventListener("click", () => {
     darkBtn.classList.toggle("active");
-    document.body.classList.toggle("dark"); // your dark mode toggle
     if (dark) {
       darkBtn.innerHTML = "light";
     } else {

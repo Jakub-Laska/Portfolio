@@ -9,15 +9,15 @@
     justify-content: space-between;
     padding: var(--horizontal-padding);
     overflow: hidden;
-    background: var(--primary-black);
     transition: filter 0.1s ease-in-out;
     will-change: filter;
     padding: 0;
+    color: #dadff7;
 }
 
 body,
-#foooter {
-    background-color: var(--primary-black);
+#footer {
+    background-color: #181819;
 }
 #footer .footer-container {
     width: 100%;
@@ -40,30 +40,6 @@ body,
     text-align: left;
     width: 100%;
     padding: var(--horizontal-padding);
-
-}
-@keyframes breathe {
-
-    0%,
-    100% {
-        opacity: 0.1;
-        text-shadow: none;
-    }
-
-    25% {
-        opacity: 0.15;
-        text-shadow: 0 0 20px var(--primary-white);
-    }
-
-    50% {
-        opacity: 0.22;
-        text-shadow: 0 0 50px var(--primary-white);
-    }
-
-    75% {
-        opacity: 0.15;
-        text-shadow: 0 0 20px var(--primary-white);
-    }
 }
 .links{
     width: 100%;
@@ -115,7 +91,6 @@ body,
 #footer .signature {
     line-height: 1;
     opacity: .1;
-    animation: breathe 2s ease-in-out infinite;
     font-size: .5em;
     align-self: flex-end;
 }
@@ -138,7 +113,6 @@ body,
     display: flex;
     flex-direction: column;
     gap: 2vw;
-    animation: breathe 2s ease-in-out infinite;
     width: 20vw;
 }
 .quote div {
@@ -149,8 +123,8 @@ body,
 }
 .quote button {
     padding: 5px;
-    background-color: var(--primary-white);
-    color: var(--primary-black);
+    background-color: #dadff7;
+    color: #181819;
     border-radius: 6px;
     font-weight: 900;
 }
@@ -166,4 +140,7 @@ body,
 #author{
     display: flex;
     align-self: flex-end;
+}
+.doNotClick {
+    z-index: 10;
 }

@@ -9,7 +9,7 @@
   width: clamp(128px, 20vw, 256px);
   height: clamp(128px, 20vw, 256px);
   pointer-events: none;
-  transition: transform 2s ease, background 10s, box-shadow 0.5s ease;
+  transition: transform 1s ease, background 10s, box-shadow 0.5s ease;
   border-radius: 50%;
   box-shadow: inset 0 0 64px rgba(0, 0, 0, 0.95),
     inset 0 0 32px rgba(0, 0, 0, 0.6),
@@ -74,9 +74,11 @@
   mask-image: linear-gradient(black, black);
   mask-composite: intersect;
   border-bottom-right-radius: 64px;
-  background-color: black;
+  background-color: var(--black-black);
   z-index: 9;
+  transition: background-color 1s ease;
 }
+
 .container::before {
   content: "";
   position: absolute;
@@ -96,11 +98,51 @@
     scale(2);
 }
 .shift.right {
-  transform: translate(var(--rightx), var(--righty)) translate(var(--x), var(--y))
-    scale(2);
+  transform: translate(var(--rightx), var(--righty))
+    translate(var(--x), var(--y)) scale(2);
 }
 .shift.bot {
-  transform: translate(var(--botx), var(--boty)) translate(var(--x), var(--y)) scale(2);
+  transform: translate(var(--botx), var(--boty)) translate(var(--x), var(--y))
+    scale(2);
 }
 
+
+
+/* Mocniejszy, wolniejszy grain po 5s bez aktywności */
+.container.inactive::before {
+    content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation-duration: 30s;     /* wolniej dryfuje */
+  opacity: 0.09;                /* bardziej widoczny */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  animation: grain-drift 10s linear infinite;
+  opacity: 0.04;
+  transition: opacity 2s ease;
+}
+
+@keyframes grain-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
 /* OPCJA WIELU KUL */
+/* usuniecie blura wszedzie */
+/* lazy load na footer */
+/* poprawa highlight w header */
+/* poprawa pisania w header i moze dodanie lekkiego glitchu */
+/* naprawa gradient shift zeby pierwszy ruch dzialal to moze jak zmiana w ismobile bedzie na jedno uzycie usuwac ten sam kierunek */
+/* random quote cos w stylu ze z tym lazy loadem od razu pobiera pierwszy cytat zeby nie bylo czekania? i ewentualnie jakis loading screen jakby i tak trzeba bylo czekac i blok guzika jak sie nie pojawilo jeszcze */
+/* scale 1 w gradients nie ma co tego powiekszac w taki sposob poczytaj i raczej .gradients transform powinien tez miec taki bazowy zeby nie trzeba bylo szukac */
+/* grok inactive animation */
+
+
+
+
+
+
+
+
+
+

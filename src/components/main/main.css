@@ -6,7 +6,6 @@ body {
 #mainContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 25vh;
   padding: var(--horizontal-padding);
@@ -19,16 +18,9 @@ body {
 }
 
 #mainContainer section {
-  background-color: var(--primary-black);
-  height: 500px;
-  width: 500px;
-  padding: var(--axial-padding);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: clamp(12px, 10vh, 64px);
-  text-align: center;
 }
 
 #mainContainer section h1 {
@@ -36,14 +28,12 @@ body {
   font-family: var(--secondary-font);
   letter-spacing: 0.2vw;
   line-height: 1;
-  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
 #mainContainer section p {
   font-size: clamp(16px, 2vw, 24px);
   font-family: var(--primary-font);
   letter-spacing: 0.1vw;
-  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
 .textContainer {
@@ -68,4 +58,11 @@ body {
 .skip-link:focus {
   top: 0;
   opacity: 1;
+}
+h1 {
+    margin-bottom: 20px;
+
+}
+p{
+    max-width: none;
 }
