@@ -50,12 +50,25 @@
       async
     ></script>
     <script src="/src/zindex.js" type="module" defer></script>
+
+    <style>
+html {
+    visibility: hidden;
+    opacity: 0;
+}
+
+html.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+</style>
   </head>
 
   <body>
     <div class="cursor"></div>
     <section id="splash-screen" aria-label="intro" role="dialog"></section>
-    <a href="#hero" class="skip-link">Skip to main content</a>
+    <a href="#hero" class="skip-link" >Skip to main content</a>
     <header id="header" role="banner" aria-label="Main Navigation"></header>
 
     <div class="container">
@@ -185,5 +198,11 @@
     </div>
 
     <footer id="footer" aria-label="Footer"></footer>
+
+    <script>
+window.addEventListener("load", function() {
+    document.documentElement.classList.add("loaded");
+});
+</script>
   </body>
 </html>

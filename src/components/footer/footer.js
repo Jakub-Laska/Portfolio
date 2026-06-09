@@ -33,17 +33,17 @@ function onScroll() {
   console.log("fire");
   requestAnimationFrame(() => {
     if (scrollY >= pageHeight - windowH * 1.3) {
-      footer.style.filter = "blur(0px)";
+      footer.style.opacity = "1";
     } else if (scrollY >= pageHeight - windowH * 1.4) {
-      footer.style.filter = "blur(4px)";
+      footer.style.opacity = "0.8";
     } else if (scrollY >= pageHeight - windowH * 1.5) {
-      footer.style.filter = "blur(6px)";
+      footer.style.opacity = "0.6";
     } else if (scrollY >= pageHeight - windowH * 1.6) {
-      footer.style.filter = "blur(8px)";
+      footer.style.opacity = "0.4";
     } else if (scrollY >= pageHeight - windowH * 1.7) {
-      footer.style.filter = "blur(10px)";
+      footer.style.opacity = "0.2";
     } else if (scrollY >= pageHeight - windowH * 2) {
-      footer.style.filter = "blur(12px)";
+      footer.style.opacity = "0";
     }
     ticking = false;
   });

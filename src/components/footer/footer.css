@@ -13,6 +13,8 @@
     will-change: filter;
     padding: 0;
     color: #dadff7;
+    opacity: 0;
+
 }
 
 body,
@@ -131,7 +133,7 @@ body,
 .quote-text{
     display: flex;
     flex-direction: column;
-    font-size: .5em;
+    font-size: .8em;
 }
 #quote{
     display: flex;

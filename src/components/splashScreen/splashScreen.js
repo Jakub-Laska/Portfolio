@@ -2,7 +2,7 @@ import "./splashScreen.css";
 
 export function initSplashScreen() {
     window.history.scrollRestoration = "manual";
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     const splashScreen = document.getElementById("splash-screen");
     const welcomePage = document.getElementById('welcomePage');
     const mainContainer = document.querySelector("#mainContainer");

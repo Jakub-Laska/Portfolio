@@ -8,7 +8,7 @@ body {
   position: fixed;
   width: 16px;
   height: 16px;
-  background: var(--primary-white, #fff);
+  background:#fcfdff;
   mix-blend-mode: difference;
   border-radius: 50%;
   pointer-events: none;

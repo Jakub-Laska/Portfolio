@@ -1,5 +1,12 @@
-My Portfolio
+# portfolio
 
+A collection of projects, ideas and experiments.
+
+Built with Vite using vanilla JavaScript, HTML and CSS.
+
+Simple. Responsive. Modular.
+
+hosted on vercel:
 
 <!-- 
 _______/\\\\\\\_______/\\\_____________        
