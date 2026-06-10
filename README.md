@@ -7,7 +7,7 @@ Built with Vite using vanilla JavaScript, HTML and CSS.
 Simple. Responsive. Modular.
 
 hosted on vercel:
-# https://portfolio-eight-tau-hgnfjpin6a.vercel.app/
+# https://jl-portfolio-dev.vercel.app/
 <!-- 
 _______/\\\\\\\_______/\\\_____________        
  ______\/////\\\______\/\\\_____________       
