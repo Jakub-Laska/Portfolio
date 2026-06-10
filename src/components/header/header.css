@@ -119,7 +119,8 @@
 
 .buttonContainer .skipBtn,
 .buttonContainer .downloadBtn,
-.buttonContainer .headerThemeToggle {
+.buttonContainer .headerThemeToggle,
+.buttonContainer #musicBtn {
   text-transform: uppercase;
   color: var(--primary-white);
   text-align: center;
@@ -159,6 +160,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+    border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .headerThemeToggle::before,

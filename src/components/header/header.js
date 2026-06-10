@@ -8,8 +8,9 @@ export function initHeader() {
   animateLogo();
   highlight();
   initBurgerMenu();
-  darkmode();
+  darkmode()
   hideHeader();
+  music();
 }
 // on click scroll to the top
 function scrollUp() {
@@ -125,21 +126,24 @@ function initBurgerMenu() {
   });
 }
 // darkmode
+let darkmodeInitialized = false;
+
 function darkmode() {
+  if (darkmodeInitialized) return;
+  darkmodeInitialized = true;
+
   const darkBtn = document.querySelector(".headerThemeToggle");
-  const darkBtnContainer = document.querySelector(".darkmodeContainer");
-  let dark = true;
-  darkBtn.innerHTML = "dark";
-  darkBtnContainer.addEventListener("click", () => {
-    darkBtn.classList.toggle("active");
-    if (dark) {
-      darkBtn.innerHTML = "light";
-    } else {
-      darkBtn.innerHTML = "dark";
-    }
+
+  let dark = false;
+
+  darkBtn.addEventListener("click", () => {
     dark = !dark;
+    console.log("darkmode init");
+    darkBtn.classList.toggle("active", dark);
+    darkBtn.textContent = dark ? "light" : "dark";
   });
 }
+
 // hide header
 function hideHeader() {
   let lastScrollY = window.scrollY;
@@ -167,4 +171,34 @@ function hideHeader() {
     },
     { passive: true }
   );
+}
+
+function music() {
+const btn = document.getElementById("musicBtn");
+const player = document.getElementById("ytPlayer");
+
+let playing = false;
+
+btn.addEventListener("click", () => {
+
+  if (!playing) {
+
+    player.src =
+      "https://www.youtube.com/embed/00KtAKMKBA8?autoplay=1&loop=1&playlist=00KtAKMKBA8";
+
+    btn.textContent = "⏸ Music";
+
+    playing = true;
+
+  } else {
+
+    player.src = "";
+
+    btn.textContent = "▶ Music";
+
+    playing = false;
+
+  }
+
+});
 }

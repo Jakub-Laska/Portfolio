@@ -30,7 +30,6 @@ function onScroll() {
   const scrollY = window.scrollY;
   const pageHeight = document.documentElement.scrollHeight;
   const windowH = window.innerHeight;
-  console.log("fire");
   requestAnimationFrame(() => {
     if (scrollY >= pageHeight - windowH * 1.3) {
       footer.style.opacity = "1";
