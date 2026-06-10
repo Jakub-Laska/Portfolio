@@ -9,6 +9,7 @@ import { initHybridScroll } from "./hybridScroll/hybridScroll.js";
 import { initFooter } from "./components/footer/footer.js";
 import { initCursor } from "./cursor/cursor.js";
 import { themeToggle } from "./theme.js";
+import { inject } from '@vercel/analytics';
 
 
 function initAll() {
@@ -23,3 +24,4 @@ function initAll() {
 themeToggle();
 }
 initAll();
+inject();
